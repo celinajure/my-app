@@ -1,0 +1,23 @@
+section.hard-skills .progress:hover{
+    font-weight: white important
+    background-color none;   
+    opacity: 50%;    
+}
+section.hard-skills .progress-bar:hover{
+    
+    --bs-progress-height: 3rem;
+    background-color:rgb(208, 11, 175) ;   
+    opacity: 50%;    
+}
+section.hard-skills .progress{
+    text-align: left; 
+    --bs-progress-height: 3rem;
+    opacity: 100%
+}
+section.hard-skills .progress-bar{
+    color:white;
+    text-align: left; 
+    --bs-progress-bg: rgb(44, 252, 252);
+    background-color:green;
+    opacity: 90%
+}

@@ -1,0 +1,11 @@
+section.proyecto-01 .list-group-item:hover{
+    background-color: rgb(98, 200, 206); 
+    font-weight:bold;
+}    
+section.proyecto-01 .list-group-item{
+    background-color: none;    
+}    
+
+section.proyecto-01.img{
+    width: -25%;
+}
