@@ -1,0 +1,424 @@
+
+{
+    "personas":[
+        {
+        "id": 1,
+        "imagen1": "assets/img/CEL-PELOS-COLORIDOS-FINALMENTE.png",
+        "imagen2": "assets/img/CEL-PELOS-COLORIDOS-otro-lado.jpeg",
+        "imagen3": "assets/img/CEL-PELOS-COLORIDOS-PATAS-ARRIBA.png",
+        "imagen4": "assets/img/CEL-PELOS-COLORIDOS@.jpeg",
+        "nombre": "Celina", 
+        "apellido":"Jure",
+        "anio":"2023",
+        "titulo": "Desarrolladora Fullstack Jr. 2023",
+        "descripcion":"Estudio realizado en el curso ofrecido por el Ministerio de Desarrollo de la Nación: #SeProgramar (2022) y #YoPorgramo (2023)"
+    },
+    {
+        "id": 2,
+        "imagen1": "assets/img/6A6FA398-19F7-45E4-9A7C-3F774F31EA61_1_105_c.jpeg",
+        "imagen2": "assets/img/58F1D001-03C5-4F9F-A929-D1E71E59E3C4.jpeg",
+        "imagen3": "assets/img/AF3F4A14-B7B4-4F94-AF71-10AAE4F10E39_1_201_a.jpeg",
+        "imagen4": "assets/img/ABC5320F-F524-48BA-92E1-CBEE59165485_1_201_a.jpeg",
+        "nombre": "Martín" ,
+        "apellido":"Mele",
+        "titulo": "Ayudante general calificado",
+        "anio":"2023",
+        "descripcion":"aplica a todas las ramas en donde se necesita asistencia y colaboración, aplicando la técnica del alma flexible"
+    }
+    ],
+
+    "experiencias":[
+            
+        {
+            "id": 1,
+            "nombre": "Artes todo",
+            "telefono":"",
+            "email":"",
+            "url":"http://www.celinajure.com/",
+            "inicioFecha":"",
+            "finFecha":"",
+            "tipo":"",
+            "estaHoy":"true"
+        },
+        {
+            "id": 2,
+            "nombre": "Artes grandes papeles",
+            "telefono":"",
+            "email":"",
+            "url":"http://www.celinajure.com/artwork/big-papers/",
+            "inicioFecha":"",
+            "finFecha":"",
+            "tipo":"",
+            "estaHoy":"true"
+        },
+        {
+            "id": 3,
+            "nombre": "Artes cerámica",
+            "telefono":"",
+            "email":"",
+            "url":"http://www.celinajure.com/artwork/ceramics/",
+            "inicioFecha":"",
+            "finFecha":"",
+            "tipo":"",
+            "estaHoy":"true"
+        },
+        {
+            "id": 4,
+            "nombre": "Utilitarios",
+            "telefono":"",
+            "email":"",
+            "url":"assets/img/CELINAJUREfuerHAMBURG@.pdf",
+            "inicioFecha":"",
+            "finFecha":"",
+            "tipo":"",
+            "estaHoy":"true"
+        },
+        {
+            "id": 5,
+            "nombre": "Construcciones laboca783",
+            "telefono":"",
+            "email":"",
+            "url":"assets/img/laboca783@.pdf",
+            "inicioFecha":"2013",
+            "finFecha":"2014",
+            "tipo":"",
+            "estaHoy":"false"
+        },
+        {
+            "id": 6,
+            "nombre": "Construcciones California",
+            "telefono":"",
+            "email":"",
+            "url":"assets/img/CALIFORNIA@27@.pdf",
+            "inicioFecha":"2019",
+            "finFecha":"2021",
+            "tipo":"",
+            "estaHoy":"false"
+        },
+        {
+            "id": 7,
+            "nombre": "Performances",
+            "telefono":"",
+            "email":"",
+            "url":"https://www.youtube.com/user/celinajure/videos",
+            "inicioFecha":"",
+            "finFecha":"2022",
+            "tipo":"",
+            "estaHoy":"true"
+        },
+        {
+            "id": 8,
+            "nombre": "Docencia",
+            "telefono":"",
+            "email":"",
+            "url":"/assets/img/docencia/mariana-tornea.mp4",
+            "inicioFecha":"1990",
+            "finFecha":"",
+            "tipo":"",
+            "estaHoy":"true"
+        },
+        {
+            "id": 9,
+            "nombre": "Docencia artes",
+            "telefono":"",
+            "email":"",
+            "url":"/assets/img/docencia/0b822d9d-7c9f-43b9-a55c-c13b56ee34af.jpg",
+            "inicioFecha":"1990",
+            "finFecha":"",
+            "tipo":"",
+            "estaHoy":"true"
+        }
+    ],
+
+    "educaciones":[
+        {
+            "id": 1,
+            "nombre": "Colegio Santa Bárbara",
+            "lugar":"Jujuy",
+            "telefono":"388 000000",
+            "email":"colegiostabarbara@colegiostabarbara.com",
+            "domicilio":"SanMartin 1111, San Salvador de Jujuy",
+            "inicioFecha":"1966",
+            "finFecha":"1975",
+            "tipo":"primaria",
+            "estaHoy":"false"
+        },
+        {
+            "id": 2,
+            "nombre": "Secundaria, Colegio Nac. N° 1",
+            "lugar":"Jujuy",
+            "telefono":"388 000000",
+            "email":"nacional@nacional.com",
+            "domicilio":"Gorriti y Belgrano, San Salvador de Jujuy",
+            "inicioFecha":"1976",
+            "finFecha":"1982",
+            "tipo":"secundaria",
+            "estaHoy":"false"
+        },
+        {
+            "id": 3,
+            "nombre": "Secundaria, Colegio Nacional N°6",
+            "lugar":"C.A.B.A.",
+            "telefono":"11 000000",
+            "email":"nacional6@nacional6.com",
+            "domicilio":"Av. Sta. Fé 4600, CABA",
+            "inicioFecha":"1979",
+            "finFecha":"",
+            "tipo":"secundaria",
+            "estaHoy":"false"
+        },
+        {
+            "id": 4,
+            "nombre": "Escuela Provincial de danzas",
+            "lugar":"Jujuy",
+            "telefono":"388 0000001",
+            "email":"provdanzas@provdanzas.com",
+            "domicilio":"belgrano 1250, San Salvador de Jujuy",
+            "inicioFecha":"1968",
+            "finFecha":"1979",
+            "tipo":"profesorado",
+            "estaHoy":"false"
+        },
+        {
+            "id": 5,
+            "nombre": "Escuela de danzas del Teatro Colón",
+            "lugar":"C.A.B.A.",
+            "telefono":"11 0000001",
+            "email":"colondanzas@colondanzas.com",
+            "domicilio":"Cerrito y Tucuman, CABA",
+            "inicioFecha":"1979",
+            "finFecha":"",
+            "tipo":"tecnicatura",
+            "estaHoy":"false"
+        },
+        {
+            "id": 6,
+            "nombre": "M.O.I.: UTtaki, Magy Ganiko",
+            "lugar":"C.A.B.A.",
+            "telefono":"11 0000001",
+            "email":"utaki@utaki.com",
+            "domicilio":"Garibaldi 1290, CABA",
+            "inicioFecha":"2009",
+            "finFecha":"2022",
+            "tipo":"práctica",
+            "estaHoy":"true"
+        },
+        
+        {
+            "id": 7,
+            "nombre": "FAU UBA",
+            "lugar":"C.A.B.A.",
+            "telefono":"11 0000002",
+            "email":"fau@fau.com",
+            "domicilio":"Ciudad Universitaria, Pavellon 3, CABA",
+            "inicioFecha":"1980",
+            "finFecha":"1983",
+            "tipo":"universitaria",
+            "estaHoy":"false"
+        },
+        {
+            "id": 8,
+            "nombre": "Esc. Nac. de Bellas Artes *P. Pueyrredón*",
+            "lugar":"C.A.B.A.",
+            "telefono":"11 0000003",
+            "email":"pueyrredon@pueyrredon.com",
+            "domicilio":"Las heras y Rodriguez Peña, CABA",
+            "inicioFecha":"1984",
+            "finFecha":"1990",
+            "tipo":"profesorado",
+            "estaHoy":"false"
+        },
+        {
+            "id": 9,
+            "nombre": "École Supériore des Bauux-Arts",
+            "lugar":"Nimes, Francia",
+            "telefono":"xxxxxxxx",
+            "email":"ecolenimesn@ecolenimes.com",
+            "domicilio":"Nimes, Francia",
+            "inicioFecha":"1986",
+            "finFecha":"1986",
+            "tipo":"profesorado",
+            "estaHoy":"false"
+        },
+        {
+            "id": 10,
+            "nombre": "Kunstakademie, clase Graubner",
+            "lugar":"Düsseldorf, Alemania",
+            "telefono":"+49 211 xxxxxxx",
+            "email":"kadus@kadus.com",
+            "domicilio":"Altstadt Düsseldorf, Alemania",
+            "inicioFecha":"1992",
+            "finFecha":"1997",
+            "tipo":"academia",
+            "estaHoy":"false"
+        },
+        {
+            "id": 11,
+            "nombre": "Cursos externos, Historia, Filosofía, Danza, Arquitectura e idiomas",
+            "lugar":"",
+            "telefono":"",
+            "email":"celinajure@gmail.com",
+            "domicilio":"dicersos",
+            "inicioFecha":"1979",
+            "finFecha":"2022",
+            "tipo":"veriado",
+            "estaHoy":"true"
+        },
+        {
+            "id": 12,
+            "nombre": "#SeProgramar, 2021 y #YoProgramo",
+            "lugar":"Argentina",
+            "telefono":"",
+            "email":"inti@inti.com",
+            "domicilio":"sincronico",
+            "inicioFecha":"2021",
+            "finFecha":"2023",
+            "tipo":"desarrollador",
+            "estaHoy":"true"
+        }
+    ],
+
+    "hardSkills":[
+        {
+            "id": 1,
+            "habilidad": "html",
+            "porcentaje": "25"
+          },
+        {
+            "id": 2,
+            "habilidad": "css",
+            "porcentaje": "35"
+         },
+        
+         {
+            "id": 3,
+            "habilidad": "Angular",
+            "porcentaje": "10"
+          },
+        {
+            "id": 4,
+            "habilidad": "dirección de obras",
+            "porcentaje": "100"
+         },
+         {
+            "id": 5,
+            "habilidad": "alemán",
+            "porcentaje": "90"
+         },
+        
+         {
+            "id": 6,
+            "habilidad": "inglés",
+            "porcentaje": "75"
+          },
+        {
+            "id": 7,
+            "habilidad": "francés y holandés",
+            "porcentaje": "60"
+         },
+         {
+            "id": 8,
+            "habilidad": "flexibilidad",
+            "porcentaje": "100"
+         },
+         {
+            "id": 9,
+            "habilidad": "autonomía y toma de decisiones",
+            "porcentaje": "90"
+         },
+         {
+            "id": 10,
+            "habilidad": "creatividad y resolución de dificultades ",
+            "porcentaje": "100"
+         }
+        ],
+        "redes":[
+            {
+                "id": 1,
+                "ulr": "https://z-p15.www.instagram.com/direct/inbox/?hl=es-la",
+                "icoFont": "fa-brands fa-instagram fa-2xl"
+              },
+            {
+                "id": 2,
+                "ulr": "https://z-p15.www.twitter.com/direct/inbox/?hl=es-la",
+                "icoFont": "fa-brands fa-instagram fa-2xl"
+             },
+            
+             {
+                "id": 3,
+                "ulr": "https://z-p15.www.linkedin.com/direct/inbox/?hl=es-la",
+                "icoFont": "fa-brands fa-instagram fa-2xl"
+              },
+            {
+                "id": 4,
+                "ulr": "/login",
+                "icoFont": "fa-solid fa-user-lock fa-2xl"
+             },
+             {
+                "id": 5,
+                "ulr": "/l",
+                "icoFont": "fa-solid fa-user fa-2xl"
+             }
+
+        ],
+
+        "proyectos":[
+            {
+            
+                "id": 1,
+                "numero":"Proyecto #00:",
+                "nombre": "Argentina Programa: #SeProgramar + #YoPorgramo ",
+                "telefono":"",
+                "email":"inti@inti.com",
+                "domicilio":"",
+                "descripcion":"Argentina Programa: #SeProgramar + #YoPorgramo. Estudio que estoy realizando para llegar a obtener el título de DESARROLLADORA FULLSTACK JR.",
+                "inicioFecha":"1921",
+                "finFecha":"2023",
+                "tipo":"",
+                "estaHoy":"true",
+                "imagen1":"assets/img/1.png",
+                "imagen2":"assets/img/2.png",
+                "imagen3":"assets/img/3.png",
+                "imagen4":"assets/img/4.png",
+                "imagen5":"assets/img/5.jpg"
+            },
+            {
+                "id": 2,
+                "numero":"Proyecto #01:",
+                "nombre": "Bloquera Lozano, Jujuy",
+                "telefono":"388 000010",
+                "email":"bloquera@bloquera.com",
+                "domicilio":"Lozano, San Salvador de Jujuy",
+                "descripcion":"Proyecto iniciado en el año 2021, en el barrio de Lozano, en San Salvador de Jujuy, al lado de un barrio nuevo, donde viven más de 800 familias, sobre terrenos donados a sus habitantes, en un orden ecléctico y en constante cambio y desarrollo,  Parte de esos habitantes serán los protagonistas  de este emprendimiento en su produccion. La idea es encaminar un grupo de jóvenes talentosos en oficios a lograr manejar su propia empresa.",
+                "inicioFecha":"1921",
+                "finFecha":"----",
+                "tipo":"producción",
+                "estaHoy":"true",
+                "imagen1":"assets/img/54e90de9-8ab3-4aa0-b7a1-69a7fd977497.jpg",
+                "imagen2":"assets/img/b58b0a48-9640-4fd2-95ba-f657b46f26aa.jpg",
+                "imagen3": "assets/img/c1a73d54-6995-4ba1-98c2-188fd2e40149.jpg",
+                "imagen4": "",
+                "imagen5": ""
+            },
+            {
+                "id": 3,
+                "numero":"Proyecto #02:",
+                "nombre": "Spreading the beat",
+                "telefono":"",
+                "email":"laboca783@laboca783.com",
+                "domicilio":"Benito Quinquela Martin 783, CABA",
+                "descripcion":"Se trata de un proyecto que será realizado el la sala superiro de laboca783 paralelamente a otros lugares en el mundo, donde serán expuestos *originales impresos* de diez artistas residentes en diferentes paises. Es un proyecto financiado parcialmente por el Fondo Metropolitano y tendrá lugar durante arteBa en el mes de octubre del 2022.",
+                "inicioFecha":"2022",
+                "finFecha":"2022",
+                "tipo":"exposición",
+                "estaHoy":"false",
+                "imagen1":"assets/img/cbedbd26-e7f9-4532-9257-6a8ec28fa395.jpg",
+                "imagen2":"assets/img/e28151b8-b63c-47fb-b0ce-527fa767b27f.jpg",
+                "imagen3":"assets/img/ebac8502-d4f3-438b-a8d8-cbb200a5d82e.jpg",
+                "imagen4": " ",
+                "imagen5": " "
+              
+            }
+        ]
+
+}
