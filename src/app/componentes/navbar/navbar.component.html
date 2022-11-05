@@ -2,21 +2,19 @@
     <div class="container-fluid">
         
         <a class="navbar-brand" href="">
-          <img src="assets/imagenes/Logo ARG Programa-20-20.png" alt="" width="20%" height="">
+          <img src="assets/imagenes/LogoARGPrograma-20-20.png" alt="" width="20%" height="">
         </a>
 <!--redes-->
-        <ul class="list-group list-group-horizontal">
-          <li class="list-group-item"><a href="https://z-p15.www.instagram.com/direct/inbox/?hl=es-la" target="blank"><i class="fa-brands fa-instagram fa-2xl"></i></a></li>
-          <li class="list-group-item"><a href="https://twitter.com/CelinaJure" target="blank"><i class="fa-brands fa-square-twitter fa-2xl"></i></a></li>
-          <li class="list-group-item"><a href="https://www.linkedin.com/in/celina-jure-9492011a7/" target="blank"><i class="fa-brands fa-linkedin fa-2xl"></i></a></li>
-          <!--Button trigger modal BOTON QUE ABRE EL LOGIN-->
-          <li class="list-group-item"><a routerLink="/login"><i class="fa-solid fa-user-lock fa-2xl"></i></a> </li>
-          <li class="list-group-item"><a routerLink="/"><i class="fa-solid fa-user fa-2xl"></i></a> </li>   
-        </ul> 
-    
-      </div>
-      <!---intento de PEN -->
-  
-      
-<!---FIN intento de PEN -->
-  
+
+        <ul class="list-group list-group-horizontal" >
+          <div *ngFor="let red of redes">
+            <li class="list-group-item"><a [href]="red.url" target="blank"><i [ngClass]="red.icoFont"></i></a></li>
+           </div><!--Button trigger modal BOTON QUE ABRE EL LOGIN-->
+           <app-boton-login ></app-boton-login>
+           <app-logout></app-logout>
+          </ul> 
+   
+  </div>  
+</nav>
+
+

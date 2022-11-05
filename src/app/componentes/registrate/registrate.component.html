@@ -9,24 +9,31 @@
             <div class="col-8 formulario-registrate">
                 <div class="modal-body">
                     <div class="row">
-                        <label for="staticEmail" class="col-sm-10 col-form-label">Email</label>
+                        <label for="nombre" class="col-sm-10 col-form-label">nombre y apellido</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="staticEmail">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="staticEmail" class="col-sm-10 col-form-label">email</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="staticEmail">
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="inputPassword" class="col-sm-10 col-form-label">contraseña</label>
+                        <label for="repeatPassword" class="col-sm-10 col-form-label">contraseña</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="inputPassword">
+                        </div>                            
+                </div>
+                    <div class="mb-3 row">
+                        <label for="inputPassword" class="col-sm-10 col-form-label">repita contraseña</label>
                         <div class="col-sm-10">
                             <input type="password" class="form-control" id="inputPassword">
                         </div> 
-                    <div class="mb-3 row">
-                            <label for="repeatPassword" class="col-sm-10 col-form-label">repita contraseña</label>
-                            <div class="col-sm-10">
-                                <input type="password" class="form-control" id="inputPassword">
-                            </div>                            
-                    </div>
+                    
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary"><a routerLink="/login">restristrandome</a></button>
+                        <button type="button" class="btn btn-primary"><a routerLink="/login">registrandome</a></button>
                     </div>
                    
                 </div>
@@ -36,9 +43,9 @@
         </div>
 </div>
 </div>
-<div>
+</section>
 
     
 
-<!-- FIN Formulario de Login-->
+<!-- FIN Formulario de REGISTRATE-->
 <app-footer></app-footer>

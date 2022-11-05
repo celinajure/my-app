@@ -3,10 +3,11 @@
     "personas":[
         {
         "id": 1,
-        "imagen1": "assets/img/CEL-PELOS-COLORIDOS-FINALMENTE.png",
-        "imagen2": "assets/img/CEL-PELOS-COLORIDOS-otro-lado.jpeg",
-        "imagen3": "assets/img/CEL-PELOS-COLORIDOS-PATAS-ARRIBA.png",
-        "imagen4": "assets/img/CEL-PELOS-COLORIDOS@.jpeg",
+        "imagenes":
+        ["assets/img/CEL-PELOS-COLORIDOS-FINALMENTE.png",
+         "assets/img/CEL-PELOS-COLORIDOS-otro-lado.jpeg",
+         "assets/img/CEL-PELOS-COLORIDOS-PATAS-ARRIBA.png",
+         "assets/img/CEL-PELOS-COLORIDOS@.jpeg"],
         "nombre": "Celina", 
         "apellido":"Jure",
         "anio":"2023",
@@ -15,10 +16,11 @@
     },
     {
         "id": 2,
-        "imagen1": "assets/img/6A6FA398-19F7-45E4-9A7C-3F774F31EA61_1_105_c.jpeg",
-        "imagen2": "assets/img/58F1D001-03C5-4F9F-A929-D1E71E59E3C4.jpeg",
-        "imagen3": "assets/img/AF3F4A14-B7B4-4F94-AF71-10AAE4F10E39_1_201_a.jpeg",
-        "imagen4": "assets/img/ABC5320F-F524-48BA-92E1-CBEE59165485_1_201_a.jpeg",
+        "imagenes": 
+        ["assets/img/6A6FA398-19F7-45E4-9A7C-3F774F31EA61_1_105_c.jpeg",
+         "assets/img/58F1D001-03C5-4F9F-A929-D1E71E59E3C4.jpeg",
+         "assets/img/AF3F4A14-B7B4-4F94-AF71-10AAE4F10E39_1_201_a.jpeg",
+         "assets/img/ABC5320F-F524-48BA-92E1-CBEE59165485_1_201_a.jpeg"],
         "nombre": "Martín" ,
         "apellido":"Mele",
         "titulo": "Ayudante general calificado",
@@ -332,35 +334,27 @@
             "porcentaje": "100"
          }
         ],
+
         "redes":[
             {
                 "id": 1,
-                "ulr": "https://z-p15.www.instagram.com/direct/inbox/?hl=es-la",
+                "url": "https://z-p15.www.instagram.com/direct/inbox/?hl=es-la",
                 "icoFont": "fa-brands fa-instagram fa-2xl"
               },
             {
                 "id": 2,
-                "ulr": "https://z-p15.www.twitter.com/direct/inbox/?hl=es-la",
-                "icoFont": "fa-brands fa-instagram fa-2xl"
+                "url": "https://twitter.com/CelinaJure",
+                "icoFont": "fa-brands fa-twitter fa-2xl"
              },
             
              {
                 "id": 3,
-                "ulr": "https://z-p15.www.linkedin.com/direct/inbox/?hl=es-la",
-                "icoFont": "fa-brands fa-instagram fa-2xl"
-              },
-            {
-                "id": 4,
-                "ulr": "/login",
-                "icoFont": "fa-solid fa-user-lock fa-2xl"
-             },
-             {
-                "id": 5,
-                "ulr": "/l",
-                "icoFont": "fa-solid fa-user fa-2xl"
-             }
-
-        ],
+                "url": "https://www.linkedin.com/in/celina-jure-9492011a7",
+                "icoFont": "fa-brands fa-linkedin fa-2xl"
+              }
+            
+            ],
+            
 
         "proyectos":[
             {
@@ -376,11 +370,12 @@
                 "finFecha":"2023",
                 "tipo":"",
                 "estaHoy":"true",
-                "imagen1":"assets/img/1.png",
-                "imagen2":"assets/img/2.png",
-                "imagen3":"assets/img/3.png",
-                "imagen4":"assets/img/4.png",
-                "imagen5":"assets/img/5.jpg"
+                "imagenes":
+                ["assets/img/1.png",
+                "assets/img/3.png",
+                "assets/img/2.png",
+                "assets/img/4.png",
+                "assets/img/5.jpg"]
             },
             {
                 "id": 2,
@@ -394,11 +389,11 @@
                 "finFecha":"----",
                 "tipo":"producción",
                 "estaHoy":"true",
-                "imagen1":"assets/img/54e90de9-8ab3-4aa0-b7a1-69a7fd977497.jpg",
-                "imagen2":"assets/img/b58b0a48-9640-4fd2-95ba-f657b46f26aa.jpg",
-                "imagen3": "assets/img/c1a73d54-6995-4ba1-98c2-188fd2e40149.jpg",
-                "imagen4": "",
-                "imagen5": ""
+                "imagenes":["assets/img/54e90de9-8ab3-4aa0-b7a1-69a7fd977497.jpg",
+                "assets/img/b58b0a48-9640-4fd2-95ba-f657b46f26aa.jpg",
+                 "assets/img/c1a73d54-6995-4ba1-98c2-188fd2e40149.jpg",
+                 "",
+                 ""]
             },
             {
                 "id": 3,
@@ -412,11 +407,11 @@
                 "finFecha":"2022",
                 "tipo":"exposición",
                 "estaHoy":"false",
-                "imagen1":"assets/img/cbedbd26-e7f9-4532-9257-6a8ec28fa395.jpg",
-                "imagen2":"assets/img/e28151b8-b63c-47fb-b0ce-527fa767b27f.jpg",
-                "imagen3":"assets/img/ebac8502-d4f3-438b-a8d8-cbb200a5d82e.jpg",
-                "imagen4": " ",
-                "imagen5": " "
+                "imagenes":["assets/img/cbedbd26-e7f9-4532-9257-6a8ec28fa395.jpg",
+               "assets/img/e28151b8-b63c-47fb-b0ce-527fa767b27f.jpg",
+               "assets/img/ebac8502-d4f3-438b-a8d8-cbb200a5d82e.jpg",
+                " ",
+                " "]
               
             }
         ]

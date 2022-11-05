@@ -16,7 +16,19 @@ import { LoginComponent } from './componentes/login/login.component';
 import { IndexComponent } from './componentes/index/index.component';
 import { ModalComponent } from './modal/modal.component';
 import { RegistrateComponent } from './componentes/registrate/registrate.component';
-
+import { HttpClientModule} from '@angular/common/http';
+import { FooterModalComponent } from './modales/footer-modal/footer-modal.component';
+import { HardSkillsModalComponent } from './modales/hard-skills-modal/hard-skills-modal.component';
+import { NavbarModalComponent } from './modales/navbar-modal/navbar-modal.component';
+import { PanelModalComponent } from './modales/panel-modal/panel-modal.component';
+import { ProyectosModalComponent } from './modales/proyectos-modal/proyectos-modal.component';
+import { RegistrateModalComponent } from './modales/registrate-modal/registrate-modal.component';
+import { SobreMiModalComponent } from './modales/sobre-mi-modal/sobre-mi-modal.component';
+import { ExperienciaModalComponent } from './modales/experiencia-modal/experiencia-modal.component';
+import { EducacionModalComponent } from './modales/educacion-modal/educacion-modal.component';
+import { RedesModalComponent } from './modales/redes-modal/redes-modal.component';
+import { LogoutComponent } from './componentes/logout/logout.component';
+import { BotonLoginComponent } from './componentes/boton-login/boton-login.component';
 
 @NgModule({
   declarations: [
@@ -33,11 +45,24 @@ import { RegistrateComponent } from './componentes/registrate/registrate.compone
     LoginComponent,
     IndexComponent,
     ModalComponent,
-    RegistrateComponent
+    RegistrateComponent,
+    FooterModalComponent,
+    HardSkillsModalComponent,
+    NavbarModalComponent,
+    PanelModalComponent,
+    ProyectosModalComponent,
+    RegistrateModalComponent,
+    SobreMiModalComponent,
+    ExperienciaModalComponent,
+    EducacionModalComponent,
+    RedesModalComponent,
+    LogoutComponent,
+    BotonLoginComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

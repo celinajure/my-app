@@ -1,12 +1,15 @@
-section.proyectos .list-group-item:hover{
-    background-color: rgb(98, 200, 206); 
-    font-weight:bold;
-}    
-section.proyectos .list-group-item{
-    background-color: none;    
-    
-}    
+section.proyectos .list-group-item:hover {
+    background-color: rgb(98, 200, 206);
+    font-weight: bold;
+}
 
-section.proyectos.img{
+ul.proyectos {
+    background-color: none;
+    display: inline-flex;
+    flex-direction:row;
+    justify-content: center;
+}
+
+section.proyectos.img {
     width: -25%;
 }

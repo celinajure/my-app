@@ -4,35 +4,14 @@
         <div class="col-1"></div>
         <div class="col-10  mt-3 mb-3">        
                   <h2>HARD & SKILLS</h2> 
-                HARD & SKILLS 
-                <div class="progress ">
-                  <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><h6 >HTML  25%</h6></div>
+                  <div *ngFor="let hardskill of hardSkills">
+                <div class="progress" style="height: 40px">
+                  <div class="progress-bar" role="progressbar" [style.width.%]="hardskill.porcentaje" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{hardskill.habilidad|uppercase}} {{hardskill.porcentaje}}%</div>
                 </div> 
                 <br>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 35%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><h6>CSS  35%</h6></div>
-                  </div>
-                  <br>
-                  <div class="progress">  
-                    <div class="progress-bar" role="progressbar"  style="width: 10%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><h6>Angular 10%</h6></div>
-                  </div>
-                  <br>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar"  style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><h6>DIRECCION DE OBRA  100%</h6></div>
-                  </div>
-                  <br>
-                  <div class="progress">  
-                    <div class="progress-bar" role="progressbar"  style="width: 90%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><h6>ALEMAN  90%</h6></div>
-                  </div>
-                  <br>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar"  style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><h6>INGLES  75%</h6></div>
-                  </div>
-                  <br>
-                  <div class="progress">  
-                    <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: 60%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><h6>HOLANDES y FRANCES  60%</h6></div>
-                 </div>
-               
+              </div>   
         </div>
         </div>
+      </div>
+    </section>
     
