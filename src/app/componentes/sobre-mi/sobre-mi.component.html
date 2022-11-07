@@ -3,10 +3,9 @@
       <div  class="row text-left-important" *ngSwitchCase ="1">
         <div class="col-2 circular-3 mt-3 mb-3 " >
          <!-----CARRUSEL--> 
-         <div id="carouselExampleControls" class="carousel slide banner animated" *ngFor="let imagen of persona.imagenes" data-bs-ride="carousel">
-            <div class="carousel-inner ">
-              <div class="carousel-item active"><img [src]="imagen" class="rounded-circle w-50 " alt="">
-            
+         <div id="carouselExampleControls" class="carousel slide banner animated"  data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" *ngFor="let imagen of persona.imagenes"><img [src]="imagen" class="rounded-circle w-50 " alt="">
             
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -18,12 +17,8 @@
             </button>
           </div>
         </div>
-    
-          
           </div>
         </div>   
-       
-      
 <!--<img src="ASSETS/IMAGENES/CEL PELOS COLORIDOS IRREGULAR.png" class="w-50" alt="..." title="..." width="" height="" text-centered="">
         </div>-->
         <div class="col-2 mt-3 mb-3"></div>
