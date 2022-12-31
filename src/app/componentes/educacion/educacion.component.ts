@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DatosService } from 'src/app/servicios/datos.service';
+import { Educacion } from 'src/app/model/educacion';
+import { EducacionService } from 'src/app/servicios/educacion.service';
+
 
 
 @Component({
@@ -9,15 +11,37 @@ import { DatosService } from 'src/app/servicios/datos.service';
 })
 
 export class EducacionComponent implements OnInit {
-  educaciones:any;
-  constructor(private datos:DatosService) { }
+  //isLogged = false;
+  educaciones:Educacion[]=[];
+  //idEditar:number;
+  //isTrue=false;
+  // aqui abajo adentro de los parentesis hay que poner: privatre tokenService.TokenService,
+  constructor(private datos:EducacionService) { }
 
   ngOnInit(): void {
-    this.datos.getDatos().subscribe(info =>{
-      this.educaciones = info.educaciones;
+    this.datos.verEducaciones().subscribe(info =>{
+      this.educaciones = info;
     }
     )
-  }
+    
+    //this.datos.agregarEducacion();
 
+    //this.datos.eliminarEducacion();
+
+    //this.educacionService.verEducaciones().subscribe(data =>{this.educaciones=data});
+  }
+ // AQUI VENDRÍASN LOS METODOS QUE TRAEMOS DEL SERVICE
+ /*idEdit(id:number){
+this.istTrue=true;
+this:idEditar=id;
+ }*/
+ /*agregarEducacion(edu: Educacion):void{
+  this.educaciones.new().subscribe(info=>{this.educaciones=info});
+ }
+
+ eliminarEducacion(id: number).subscribeinfo =>{
+      this.educaciones = info;
+    }
+    )*/
 }
 

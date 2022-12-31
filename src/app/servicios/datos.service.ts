@@ -6,6 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DatosService {
+  verProyectos() {
+    throw new Error('Method not implemented.');
+  }
+  verExperiencias() {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(private http:HttpClient) { }
 

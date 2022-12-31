@@ -54,7 +54,7 @@ li.list-group-item.mt-4.mb-4.itemTrashColor:hover{
 }
 
 .carusel-inner.carousel-item-active{
-    vertical-align:middle
+    vertical-align: middle;
 }
 .section.about {
     margin-top: 30; vertical-align: middle;

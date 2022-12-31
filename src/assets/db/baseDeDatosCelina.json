@@ -3,11 +3,11 @@
     "personas":[
         {
         "id": 1,
-        "imagenes":
-        ["assets/img/CEL-PELOS-COLORIDOS-FINALMENTE.png",
-         "assets/img/CEL-PELOS-COLORIDOS-otro-lado.jpeg",
-         "assets/img/CEL-PELOS-COLORIDOS-PATAS-ARRIBA.png",
-         "assets/img/CEL-PELOS-COLORIDOS@.jpeg"],
+     
+         "imagen1":"assets/img/CEL-PELOS-COLORIDOS-FINALMENTE@.png",
+         "imagen2":"assets/img/CEL-PELOS-COLORIDOS-PATAS-ARRIBA.png",
+         "imagen3":"assets/img/CEL-PELOS-COLORIDOS-otro-lado.jpeg",
+         "imagen4":"assets/img/CEL-PELOS-COLORIDOS@.jpeg",
         "nombre": "Celina", 
         "apellido":"Jure",
         "anio":"2023",
@@ -16,24 +16,24 @@
     },
     {
         "id": 2,
-        "imagenes": 
-        ["assets/img/6A6FA398-19F7-45E4-9A7C-3F774F31EA61_1_105_c.jpeg",
-         "assets/img/58F1D001-03C5-4F9F-A929-D1E71E59E3C4.jpeg",
-         "assets/img/AF3F4A14-B7B4-4F94-AF71-10AAE4F10E39_1_201_a.jpeg",
-         "assets/img/ABC5320F-F524-48BA-92E1-CBEE59165485_1_201_a.jpeg"],
+        "imagen1":"assets/img/6A6FA398-19F7-45E4-9A7C-3F774F31EA61_1_105_c.jpeg",
+        "imagen2":"assets/img/58F1D001-03C5-4F9F-A929-D1E71E59E3C4.jpeg",
+        "imagen3":"assets/img/AF3F4A14-B7B4-4F94-AF71-10AAE4F10E39_1_201_a.jpeg",
+        "imagen4":"assets/img/ABC5320F-F524-48BA-92E1-CBEE59165485_1_201_a.jpeg",
         "nombre": "Martín" ,
         "apellido":"Mele",
         "titulo": "Ayudante general calificado",
         "anio":"2023",
         "descripcion":"aplica a todas las ramas en donde se necesita asistencia y colaboración, aplicando la técnica del alma flexible"
     }
-    ],
+],
+    
 
     "experiencias":[
             
         {
             "id": 1,
-            "nombre": "Artes todo",
+            "nombre": "Arte: todo",
             "telefono":"",
             "email":"",
             "url":"http://www.celinajure.com/",
@@ -44,7 +44,7 @@
         },
         {
             "id": 2,
-            "nombre": "Artes grandes papeles",
+            "nombre": "Arte: grandes papeles",
             "telefono":"",
             "email":"",
             "url":"http://www.celinajure.com/artwork/big-papers/",
@@ -55,7 +55,7 @@
         },
         {
             "id": 3,
-            "nombre": "Artes cerámica",
+            "nombre": "Arte: cerámica",
             "telefono":"",
             "email":"",
             "url":"http://www.celinajure.com/artwork/ceramics/",
@@ -77,7 +77,7 @@
         },
         {
             "id": 5,
-            "nombre": "Construcciones laboca783",
+            "nombre": "Construcciones: laboca783",
             "telefono":"",
             "email":"",
             "url":"assets/img/laboca783@.pdf",
@@ -88,7 +88,7 @@
         },
         {
             "id": 6,
-            "nombre": "Construcciones California",
+            "nombre": "Construcciones: California",
             "telefono":"",
             "email":"",
             "url":"assets/img/CALIFORNIA@27@.pdf",
@@ -263,7 +263,7 @@
             "domicilio":"dicersos",
             "inicioFecha":"1979",
             "finFecha":"2022",
-            "tipo":"veriado",
+            "tipo":"variado",
             "estaHoy":"true"
         },
         {
@@ -358,7 +358,7 @@
 
         "proyectos":[
             {
-            
+
                 "id": 1,
                 "numero":"Proyecto #00:",
                 "nombre": "Argentina Programa: #SeProgramar + #YoPorgramo ",
@@ -370,12 +370,14 @@
                 "finFecha":"2023",
                 "tipo":"",
                 "estaHoy":"true",
-                "imagenes":
-                ["assets/img/1.png",
+                "imagenes": [
+                "assets/img/1.png",
                 "assets/img/3.png",
                 "assets/img/2.png",
                 "assets/img/4.png",
-                "assets/img/5.jpg"]
+               "assets/img/5.jpg"
+                ]
+
             },
             {
                 "id": 2,
@@ -386,20 +388,20 @@
                 "domicilio":"Lozano, San Salvador de Jujuy",
                 "descripcion":"Proyecto iniciado en el año 2021, en el barrio de Lozano, en San Salvador de Jujuy, al lado de un barrio nuevo, donde viven más de 800 familias, sobre terrenos donados a sus habitantes, en un orden ecléctico y en constante cambio y desarrollo,  Parte de esos habitantes serán los protagonistas  de este emprendimiento en su produccion. La idea es encaminar un grupo de jóvenes talentosos en oficios a lograr manejar su propia empresa.",
                 "inicioFecha":"1921",
-                "finFecha":"----",
+                "finFecha":" ",
                 "tipo":"producción",
                 "estaHoy":"true",
                 "imagenes":["assets/img/54e90de9-8ab3-4aa0-b7a1-69a7fd977497.jpg",
-                "assets/img/b58b0a48-9640-4fd2-95ba-f657b46f26aa.jpg",
-                 "assets/img/c1a73d54-6995-4ba1-98c2-188fd2e40149.jpg",
-                 "",
-                 ""]
+               "assets/img/b58b0a48-9640-4fd2-95ba-f657b46f26aa.jpg",
+                "assets/img/c1a73d54-6995-4ba1-98c2-188fd2e40149.jpg",
+                "",
+                ""] 
             },
             {
                 "id": 3,
                 "numero":"Proyecto #02:",
                 "nombre": "Spreading the beat",
-                "telefono":"",
+                "telefono":" ",
                 "email":"laboca783@laboca783.com",
                 "domicilio":"Benito Quinquela Martin 783, CABA",
                 "descripcion":"Se trata de un proyecto que será realizado el la sala superiro de laboca783 paralelamente a otros lugares en el mundo, donde serán expuestos *originales impresos* de diez artistas residentes en diferentes paises. Es un proyecto financiado parcialmente por el Fondo Metropolitano y tendrá lugar durante arteBa en el mes de octubre del 2022.",
@@ -408,11 +410,11 @@
                 "tipo":"exposición",
                 "estaHoy":"false",
                 "imagenes":["assets/img/cbedbd26-e7f9-4532-9257-6a8ec28fa395.jpg",
-               "assets/img/e28151b8-b63c-47fb-b0ce-527fa767b27f.jpg",
-               "assets/img/ebac8502-d4f3-438b-a8d8-cbb200a5d82e.jpg",
+                "assets/img/e28151b8-b63c-47fb-b0ce-527fa767b27f.jpg",
+                "assets/img/ebac8502-d4f3-438b-a8d8-cbb200a5d82e.jpg",
                 " ",
-                " "]
-              
+                 " "]
+        
             }
         ]
 

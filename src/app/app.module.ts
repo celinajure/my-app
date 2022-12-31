@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { SobreMiComponent } from './componentes/sobre-mi/sobre-mi.component';
 import { EducacionComponent } from './componentes/educacion/educacion.component';
 import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
@@ -14,26 +12,34 @@ import { FooterComponent } from './componentes/footer/footer.component';
 import { PanelComponent } from './componentes/panel/panel.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { IndexComponent } from './componentes/index/index.component';
+import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { ModalComponent } from './modal/modal.component';
 import { RegistrateComponent } from './componentes/registrate/registrate.component';
-import { HttpClientModule} from '@angular/common/http';
-import { FooterModalComponent } from './modales/footer-modal/footer-modal.component';
-import { HardSkillsModalComponent } from './modales/hard-skills-modal/hard-skills-modal.component';
-import { NavbarModalComponent } from './modales/navbar-modal/navbar-modal.component';
-import { PanelModalComponent } from './modales/panel-modal/panel-modal.component';
-import { ProyectosModalComponent } from './modales/proyectos-modal/proyectos-modal.component';
-import { RegistrateModalComponent } from './modales/registrate-modal/registrate-modal.component';
-import { SobreMiModalComponent } from './modales/sobre-mi-modal/sobre-mi-modal.component';
-import { ExperienciaModalComponent } from './modales/experiencia-modal/experiencia-modal.component';
-import { EducacionModalComponent } from './modales/educacion-modal/educacion-modal.component';
-import { RedesModalComponent } from './modales/redes-modal/redes-modal.component';
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { LogoutComponent } from './componentes/logout/logout.component';
 import { BotonLoginComponent } from './componentes/boton-login/boton-login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalSobreMiComponent } from './modal/sobre-mi-modal/modal-sobre-mi.component';
+import { ModalExperienciaComponent } from './modal/experiencia-modal/modal-experiencia.component';
+import { ModalEducacionComponent } from './modal/educacion-modal/modal-educacion.component';
+import { ModalProyectoComponent } from './modal/proyecto-modal/modal-proyecto.component';
+import { ModalNavbarComponent } from './modal/navbar-modal/modal-navbar.component';
+import { RedesModalComponent } from './modal/redes-modal/redes-modal.component';
+import { ModalRegistrateComponent } from './modal/registrate-modal/modal-registrate.component';
+import { ModalPanelComponent } from './modal/panel--modal/modal-panel.component';
+
+import { ModalHardSkillsComponent } from './modal/hard-skills-modal/modal-hard-skills.component';
+import { InterceptorService } from './servicios/interceptor.service';
+import { PersonaService } from './servicios/persona.service';
+
+
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     SobreMiComponent,
     EducacionComponent,
     ExperienciaComponent,
@@ -45,26 +51,37 @@ import { BotonLoginComponent } from './componentes/boton-login/boton-login.compo
     LoginComponent,
     IndexComponent,
     ModalComponent,
+    ModalNavbarComponent,
     RegistrateComponent,
-    FooterModalComponent,
-    HardSkillsModalComponent,
-    NavbarModalComponent,
-    PanelModalComponent,
-    ProyectosModalComponent,
-    RegistrateModalComponent,
-    SobreMiModalComponent,
-    ExperienciaModalComponent,
-    EducacionModalComponent,
-    RedesModalComponent,
     LogoutComponent,
     BotonLoginComponent,
+    ModalEducacionComponent,
+    ModalExperienciaComponent,
+  
+    ModalHardSkillsComponent,
+    ModalNavbarComponent,
+
+ModalPanelComponent,
+    ModalProyectoComponent,
+    ModalRegistrateComponent,
+    ModalSobreMiComponent,
+    NavbarComponent,
+
+    RedesModalComponent,
+
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+ 
+  providers: [PersonaService, { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true}],
+    bootstrap: [AppComponent]
+   
 })
 export class AppModule { }

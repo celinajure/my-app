@@ -1,27 +1,39 @@
-<section class= "proyectos" *ngFor="let proyecto of proyectos">
-    <div class="container text-white text-center mt-1 ms-0 mw-0" >
-      <div class="row text-center-important " >
-        <div class="col-1">
+<section class="proyectos" *ngFor="let proyecto of proyectos">
+  <div class="container text-white text-center mt-1 ms-0 mw-0">
+    <div class="row text-center-important ">
+      <div class="col-1">
+      </div>
+      <div class="col-10 mt-3 mb-3">
+        <h2>{{proyecto.numero|uppercase}}</h2>
+        <h2>{{proyecto.nombre|uppercase}}</h2>
+        <div class="text-white-important" class="list-group "></div>
+        <div class="list-group-item">
+          <p class="fs-6 fw-lighter"><i>{{proyecto.descripcion}}</i></p>
         </div>
-        <div class="col-10 mt-3 mb-3" >
-          <h2>{{proyecto.numero|uppercase}}</h2>
-          <h2>{{proyecto.nombre|uppercase}}</h2>
-          <div class="text-white-important" class="list-group "></div>
-            <div class="list-group-item">
-              <p class="fs-6 fw-lighter"><i>{{proyecto.descripcion}}</i></p>
-            </div>
-            <ul class="ul.proyectos  list-group list-group-horizontal mb-4" *ngFor="let imagen of proyecto.imagenes">          
-              <li class="list-group-item"><img [src]="imagen" class=" rounded float" alt=""></li>
-             
-            </ul>
-        </div>
-       </div>
-      </div> 
-    </section>
+
+        
+          <ul class="proyectos  list-group list-group-horizontal mb-4" >
+            <li class="list-group-item"><img [src]="proyecto.imagen1" class=" rounded float" >
+            </li>
+            <li class="list-group-item"><img [src]="proyecto.imagen2" class=" rounded float" >
+            </li>
+            <li class="list-group-item"><img [src]="proyecto.imagen3" class=" rounded float" >
+            </li>
+              <li class="list-group-item"><img [src]="proyecto.imagen4" class=" rounded float" >
+              </li>
+              <li class="list-group-item"><img [src]="proyecto.imagen5" class=" rounded float" >
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+</section>
 
 
 
-      <!---
+<!---
       <section class= "proyectos">
         <div class="container text-white text-center mt-1 ms-0 mw-0">
           <div class="row text-center-important ">

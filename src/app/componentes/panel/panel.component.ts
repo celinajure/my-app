@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { subscribeOn } from 'rxjs';
+import { Redes } from 'src/app/model/redes';
+
 import { DatosService } from 'src/app/servicios/datos.service';
 
 @Component({
@@ -8,7 +10,7 @@ import { DatosService } from 'src/app/servicios/datos.service';
   styleUrls: ['./panel.component.css']
 })
 export class PanelComponent implements OnInit {
-redes:any;
+redes:Redes[]=[];
 
   constructor(private datos: DatosService) { }
 
