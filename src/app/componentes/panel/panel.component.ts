@@ -20,6 +20,6 @@ this.datos.getDatos().subscribe(info=>{
 
 }
 )
-  }
+}
 
 }

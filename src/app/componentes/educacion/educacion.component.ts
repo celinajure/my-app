@@ -15,7 +15,7 @@ export class EducacionComponent implements OnInit {
   educaciones:Educacion[]=[];
   //idEditar:number;
   //isTrue=false;
-  // aqui abajo adentro de los parentesis hay que poner: privatre tokenService.TokenService,
+  // aqui abajo adentro de los parentesis hay que poner: private tokenService.TokenService,
   constructor(private datos:EducacionService) { }
 
   ngOnInit(): void {

@@ -8,9 +8,9 @@ import { RegistrateComponent } from './componentes/registrate/registrate.compone
 import { GuardGuard } from './servicios/guard.guard';
 
 const routes: Routes = [
-  {path: '', component: IndexComponent, canActivate:[GuardGuard]},
+  {path: '', component: IndexComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'panel', component: PanelComponent},
+  {path: 'panel', component: PanelComponent, /*canActivate:[GuardGuard]*/},
   {path: 'registrate', component: RegistrateComponent},
   {path: '**', component: Error404Component}
 ];

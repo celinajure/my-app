@@ -29,6 +29,6 @@ public editarExperiencia(expe: Experiencia): Observable<any> {
 }
 
 public eliminarExperiencia(id: number): Observable<Experiencia> {
-  return this.http.get<Experiencia>(this.url + 'ver/${id}')
+  return this.http.get<Experiencia>(this.url + 'eliminar/${id}')
 };
 }

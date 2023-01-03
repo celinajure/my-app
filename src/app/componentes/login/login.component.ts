@@ -15,8 +15,11 @@ import { Persona } from 'src/app/model/persona';
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
+  email = '';
+  password = '';
+  //authService: any;
   
-  persona: Persona = new Persona("", "", "", "", "", "", "", "", "","","");
+  persona: Persona = new Persona("", "", "", "", "", "", "", "", "", "", "",);
   
  
  
@@ -25,7 +28,8 @@ export class LoginComponent implements OnInit {
     this.form=this.formBuilder.group(
       {
         email:['',[Validators.required,Validators.email]],
-        clave:['',[Validators.required,Validators.minLength(4)]],
+        clave:['',[Validators.required,Validators.minLength(8)]],
+        
       })
    }
  
@@ -40,17 +44,33 @@ get Email(){
 get Clave(){
   return this.form.get('clave');
 }
+//metodo de validacionde password
+get PasswordValid(){
+  return this.Clave?.touched && !this.Clave?.valid;
+  }
+  
+  //metodo de validacion de mail
+  get MailValid(){
+  return this.Email?.touched && !this.Email?.valid;
+  }
 onEnviar(event: Event){
   event.preventDefault;
   this.autService.loginPersona(this.form.value).subscribe(data =>
     {
       console.log("DATA: " + JSON.stringify(data));
-    })
-    this.ruta.navigate([''])
+    
+    this.ruta.navigate(['/panel'])
    
-}
- 
-}
+      },error=>{
+        console.log(error);
+      }
+      )
+    }
+    
+    };
+  
+
+
 
 
 /* codigo de cintia completo....-------------

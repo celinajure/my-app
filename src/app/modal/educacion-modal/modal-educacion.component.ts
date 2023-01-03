@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { Educacion } from 'src/app/model/educacion';
-import { DatosService } from 'src/app/servicios/datos.service';
+
 
 import { EducacionService } from 'src/app/servicios/educacion.service';
 
@@ -15,12 +15,17 @@ export class ModalEducacionComponent implements OnInit {
   form: FormGroup;
   educaciones: Educacion[]=[];
 
-  constructor(private datos: DatosService, private formBuilder: FormBuilder, private EducacionS:EducacionService) {
+  constructor( private formBuilder: FormBuilder, private EducacionS:EducacionService) {
     //Creamos el grupo de controles para el formulario 
 
     this.form = this.formBuilder.group({
+      id: [''],
       tipo: ['', [Validators.required]],
       nombre: ['',[Validators.required]],
+      domicilio: [''],
+      email: [''],
+      estaHoy:[''],
+      telefono: [''],
       lugar: [''],
       inicioFecha: [''],
       finFecha: [''],
@@ -44,15 +49,14 @@ cargarEducacion(): void{
   )
 }
 
-
-
-cargarDetalle(id?:number){
+cargarDetalle(id:number){
   this.EducacionS.verEducacion(id).subscribe(
-    {next : (data) => {
+    {
+      next : (data) => {
       this.form.setValue(data);
     },
     error: (e) => {
-      
+      console.error(e)
       alert("error al modificar")
     },
     complete: () => console.info('complete aqui')
@@ -60,12 +64,6 @@ cargarDetalle(id?:number){
 )
 }
 //👇 esto es solo para hacer pruebas en local
-onImagenSeleccionada(e: any) {
-  let nombreImagen = e.target.files[0].name
-  let url = 'assets/img/' + nombreImagen;
-  this.form.patchValue({ logoInstitucion: url });
-  console.log(url);
-}
 
 
 guardar() {
@@ -81,10 +79,11 @@ this.EducacionS.agregarEducacion(edu).subscribe(
     this.form.reset();
   }
   )
-} else {
+} else 
+{
   this.EducacionS.editarEducacion(edu).subscribe(
   data => {
-      alert("Educación modificada");
+      alert("Educación editada!!! UIHUUU!!!!");
       this.cargarEducacion();
       this.form.reset();
     }
@@ -92,7 +91,7 @@ this.EducacionS.agregarEducacion(edu).subscribe(
 }
 }
 
-borrar(id?: number) {
+borrar(id: number) {
 this.EducacionS.eliminarEducacion(id).subscribe(
   {
     next: data => {
@@ -106,6 +105,9 @@ this.EducacionS.eliminarEducacion(id).subscribe(
       }
     )
   }
+
+  
+
 }
 
       

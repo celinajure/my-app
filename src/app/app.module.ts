@@ -15,7 +15,7 @@ import { IndexComponent } from './componentes/index/index.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { ModalComponent } from './modal/modal.component';
 import { RegistrateComponent } from './componentes/registrate/registrate.component';
-import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LogoutComponent } from './componentes/logout/logout.component';
 import { BotonLoginComponent } from './componentes/boton-login/boton-login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -57,11 +57,11 @@ import { PersonaService } from './servicios/persona.service';
     BotonLoginComponent,
     ModalEducacionComponent,
     ModalExperienciaComponent,
-  
+
     ModalHardSkillsComponent,
     ModalNavbarComponent,
 
-ModalPanelComponent,
+    ModalPanelComponent,
     ModalProyectoComponent,
     ModalRegistrateComponent,
     ModalSobreMiComponent,
@@ -79,9 +79,9 @@ ModalPanelComponent,
     FormsModule,
     ReactiveFormsModule
   ],
- 
-  providers: [PersonaService, { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true}],
-    bootstrap: [AppComponent]
-   
+
+  providers: [PersonaService, { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }],
+  bootstrap: [AppComponent]
+
 })
 export class AppModule { }

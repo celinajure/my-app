@@ -8,18 +8,24 @@ import { AutenticacionService } from './autenticacion.service';
 @Injectable({
   providedIn: 'root'
 })
+
 export class GuardGuard implements CanActivate {
   constructor(private autenticacionServicio: AutenticacionService, private rutas: Router){
- 
- 
-  }
+ }
  
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     let currentUser = this.autenticacionServicio.usuarioAutenticado;
+    if(currentUser && currentUser.autenticacionService){
+      this.rutas.navigate(['/panel'])
+      return true;
+    }
+    else{
+      this.rutas.navigate(['/'])
+      return false;
+    }
     
-    return true;
   }
 }
 

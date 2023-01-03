@@ -27,7 +27,7 @@
           </select-->
           <ul class="p-0">
             <li *ngFor="let educacion of educaciones" class="d-flex justify-content-between align-items-center m-1 ">
-              <span>{{educacion.id}}. {{educacion.tipo|uppercase}}-{{educacion.nombre|uppercase}}</span>
+              <span>{{educacion.id}}. {{educacion.nombre|uppercase}}</span>
               <span class="d-flex justify-content-between gap-2">
               <!--lapicito rojo que se cambia al tocarlo-->
                 <button type="button" class="btn btn-sm btn-outline-success pl-1 pr-1 m-0" (click)="cargarDetalle(educacion.id)">
@@ -74,13 +74,35 @@
               <label for="lugar" class="form-label">lugar</label>
               <input type="text" class="form-control" id="lugar" placeholder="" formControlName="lugar">
             </div>
+
             <div class="mb-3">
               <label for="inicioFecha" class="form-label">fecha de inicio</label>
               <input type="date" class="form-control" id="fecha de inicio" placeholder="fecha de inicio" formControlName="inicioFecha">
             </div>
+
             <div class="mb-3">
               <label for="finFecha" class="form-label">fecha de finalización</label>
               <input type="date" class="form-control" id="fecha de finalización" placeholder="fecha de  finalización" formControlName="finFecha">
+            </div>
+
+            <div class="mb-3">
+              <label for="estaHoy" class="form-label">es actual?</label>
+              <input type="text" class="form-control" id="estaHoy" placeholder="estahoy" formControlName="estaHoy">
+            </div>
+
+            <div class="mb-3">
+              <label for="domicilio" class="form-label">domicilio</label>
+              <input type="text" class="form-control" id="domicilio" placeholder="domicilio" formControlName="domicilio">
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="email" formControlName="email">
+            </div>
+
+            <div class="mb-3">
+              <label for="telefono" class="form-label">Teléfono</label>
+              <input type="text" class="form-control" id="telefono" placeholder="ftelefono" formControlName="telefono">
             </div>
           
           <!--div class="modal-footer">

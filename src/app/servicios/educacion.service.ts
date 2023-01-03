@@ -7,6 +7,9 @@ import { Educacion } from '../model/educacion';
   providedIn: 'root'
 })
 export class EducacionService {
+  editEducacion() {
+    throw new Error('Method not implemented.');
+  }
   url = 'http://localhost:8080/educacion/';
   updateEducacion: any;
 
@@ -24,11 +27,11 @@ public agregarEducacion(edu: Educacion): Observable<any> {
   return this.http.post<any>(this.url + 'new', edu);
 }
 
-public editarEducacion(edu: Educacion): Observable<any> {
-  return this.http.put<any>(this.url + 'edit', edu);
+public eliminarEducacion(id: number): Observable<Educacion> {
+  return this.http.delete<any>(this.url + 'eliminar/${id}');
 }
 
-public eliminarEducacion(id: number): Observable<Educacion> {
-  return this.http.get<Educacion>(this.url + 'ver/${id}');
+public editarEducacion(edu: Educacion): Observable<any> {
+  return this.http.put<any>(this.url + 'editar/${id}', edu);
 }
 }

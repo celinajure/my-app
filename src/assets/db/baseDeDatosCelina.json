@@ -1,5 +1,18 @@
 
 {
+    "login":[
+        {
+            "email":"celinajure@gmail.com",
+            "clave":"87654321",
+            "deviceId":"123456789",
+            "deviceType":"DEVICE_TYPE_ANDROID",
+            "notificationToken":"987654321234567689"
+          }
+    ],
+    
+    
+    
+    
     "personas":[
         {
         "id": 1,
