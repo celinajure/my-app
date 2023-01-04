@@ -9,95 +9,102 @@
     
       <form [formGroup]="form" name="experienciaform">
         <div class="modal-body">
-          <select class="form-select mb-3" aria-label="Default select example">
-            <option selected>elija una opción</option>
-            <option value="1">Arte: todo</option>
-            <option value="2">Arte: grandes papeles</option>
-            <option value="3">Arte: cerámica</option>
-            <option value="1">Utilitarios</option>
-            <option value="2">Construcciones: laboca783</option>
-            <option value="3">Construcciones: California</option>
-            <option value="1">Performances</option>
-            <option value="2">Docencia</option>
-            <option value="3">Docencia artes</option>
-            <option value="4">NUEVA EXPERIENCIA</option>
-          </select>
+         
+          <ul class="p-0">
+            <li *ngFor="let experiencia of experiencias" class="d-flex justify-content-between align-items-center m-1 ">
+              <span>{{experiencia.id}}. {{experiencia.nombre|uppercase}}</span>
+              <span class="d-flex justify-content-between gap-2">
+              <!--lapicito rojo que se cambia al tocarlo-->
+                <button type="button" class="btn btn-sm btn-outline-success pl-1 pr-1 m-0" (click)="cargarDetalle(experiencia.id)">
+                  <i class="fa-solid fa-pen"></i>
+                </button>
+                <!--Tachico de Basura que se hace fondo rojo al tocarlo-->
+                <button type="button" class="btn btn-sm btn-outline-danger pl-1 pr-1 m-0" (click)="borrar(experiencia.id)">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </span>
+            </li>
+          </ul>
+          <!--esto es la validacion  renderizado condicional-->
+          <div class="input-group mb-3 bg-light" *ngIf="!!form.value.id">
+            <div class="input-group-prepend border-0">
+              <span class="input-group-text border-0" id="basic-addon1">ID:</span>
+            </div>
+            <input class="form-control outline-none border-0 bg-transparent" type="text" readonly formControlName="id">
+          </div>
+
 
           <div class="mb-3">
-            <label for="nombre" class="form-label">nombre</label>
-            <input class="form-control" type="text" id="nombre" placeholder="complete aquí" formControlName="nombre" [ngClass]="{'is invalid':Nombre.errors && Nombre.touched, 'is valid':!Nombre.errors && 
-            Nombre.touched}">
-            <div *ngIf="Nombre.errors && Nombre.touched">
-              <p *ngIf="Nombre.hasError('required')" class="text-danger">
-                El Nombre de su experiencia es requerido!!!
-              </p>
-            </div>
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" placeholder="campo obligatorio" formControlName="nombre" [ngClass]="{'is-invalid': form.get('nombre')?.errors && form.get('nombre')?.touched, 'is-valid': form.get('nombre')?.errors && form.get('nombre')?.touched}">
+            <p class="text-danger"
+              *ngIf="form.get('nombre')?.touched && form.get('nombre')?.errors?.['required']">
+              El Nombre de la Experiencia es requerida.
+            </p>
           </div>
 
           <div class="mb-3">
             <label for="tipo" class="form-label">tipo de experiencia</label>
-            <textarea class="form-control" type="text" id="tipo" placeholder="complete aquí" formControlName="tipo"
-              [ngClass]="{'is invalid':Tipo.errors && Tipo.touched,'is valid':!Tipo.errors && Tipo.touched}">       
-            </textarea>
-            <div *ngIf="Tipo.errors && Tipo.touched">
-              <p *ngIf="Tipo.hasError('required')" class="text-danger">
-                El Tipo de experiencia es requerido!!!
-              </p>>
-            </div>
-          </div>
+            <input type="text" class="form-control" id="tipo" formControlName="tipo" placeholder="campo obligatorio"[ngClass]="{'is-invalid': form.get('tipo')?.errors && form.get('tipo')?.touched, 'is-valid': form.get('tipo')?.errors && form.get('tipo')?.touched}">
+            <p class="text-danger"
+              *ngIf="form.get('tipo')?.touched && form.get('tipo')?.errors?.['required']">
+                  El tipo de experiencia es requerido!
+                </p>
+              </div>
 
-          <div class="mb-3">
-            <label for="telefono" class="form-label">teléfono</label>
-            <input type="text" class="form-control" id="telefono" placeholder="complete aquí" formControlName="telefono">
-          </div>
+              <div class="mb-3">
+                <label for="telefono" class="form-label">teléfono</label>
+                <input type="text" class="form-control" id="telefono" placeholder="" formControlName="telefono">
+              </div>
+  
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="email" formControlName="email">
+              </div>
 
-          <div class="mb-3">
-            <label for="email" class="form-label">email</label>
-            <input type="text" class="form-control" id="email" placeholder="complete aquí" formControlName="email">
-          </div>
-
-          <div class="mb-3">
-            <label for="url" class="form-label">url</label>
-            <input type="text" class="form-control" id="url" placeholder="complete aquí" formControlName="url" [ngClass]="{'is invalid':Url.errors && Url.touched, 'is valid':!Url.errors && 
-            Url.touched}">
-            <div *ngIf="Url.errors && Url.touched">
-              <p *ngIf="Url.hasError('required')" class="text-danger">
-                La Url es requerido!!!
+              
+               <div class="mb-3">
+            <label for="url" class="form-label">URL</label>
+            <input type="text" class="form-control" id="url" formControlName="url" placeholder="campo obligatorio"[ngClass]="{'is-invalid': form.get('url')?.errors && form.get('url')?.touched, 'is-valid': form.get('url')?.errors && form.get('url')?.touched}">
+            <p class="text-danger"
+              *ngIf="form.get('url')?.touched && form.get('url')?.errors?.['required']">
+                  La Url es requerida!!!
               </p>
             </div>
-          </div>
+       
 
          
 
           <div class="mb-3">
             <label for="inicioFecha" class="form-label">fecha de inicio</label>
-            <input type="date" class="form-control" id="fecha de inicio" placeholder="fecha de inicio" formControlName="inicioFecha">
+            <input type="date" class="form-control" id="fecha de inicio" placeholder="" formControlName="inicioFecha">
           </div>
 
           <div class="mb-3">
-            <label for="finfecha" class="form-label">fecha de finalización</label>
-            <input type="date" class="form-control" id="fecha de finalización" placeholder="fecha de finalización" formControlName="finFecha">
+            <label for="finFecha" class="form-label">fecha de finalización</label>
+            <input type="date" class="form-control" id="fecha de finalización" placeholder="" formControlName="finFecha">
           </div>
 
           <div class="form-check form-switch">
             <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" formControlName="estaHoy">
-            <label class="form-check-label" for="flexSwitchCheckDefault">Es trabajo actual?</label>
+            <label class="form-check-label" for="flexSwitchCheckDefault">es actual?</label>
           </div>
+
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-secundary">GUARDAR</button>
+            <button class="btn btn-secondary" (click)="form.reset()">RESET</button>
+            <button class="btn btn-secondary" (click)="guardar()"[disabled]="form.invalid">GUARDAR DATOS</button>
           </div>
-
         </div>
       </form>
     </div>
-    </div>
-    </div>
+  </div>
+
 
   
 
 <!-- FIN Modal PEN de EXPERIENCIA-->
-<!-- Modal TRASH de EXPERIENCIA-->
+<!-- Modal TRASH de EXPERIENCIA
 <div class="modal fade" id="experienciaModaltrash" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -127,4 +134,4 @@
   </div>
 </div>
 
-<!-- FIN Modal TRASH de EXPERIENCIA-->
+FIN Modal TRASH de EXPERIENCIA-->

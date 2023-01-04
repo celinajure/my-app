@@ -21,9 +21,6 @@ export class LoginComponent implements OnInit {
   
   persona: Persona = new Persona("", "", "", "", "", "", "", "", "", "", "",);
   
- 
- 
- 
   constructor(private ruta: Router, private formBuilder: FormBuilder, private autService: AutenticacionService) {
     this.form=this.formBuilder.group(
       {
@@ -157,3 +154,11 @@ let pers:Persona = new Persona("", "", "", "", "", "", "",this.form.get("email")
  
 
 }*/
+
+
+/* esto es de Josman
+this.autenticacionService.IniciarSesion(this.form.value).subscribe(data => { 
+      //console.log("DATA:" + JSON.stringify(data));       
+    })       
+    this.ruta.navigate(['/portfolio']);
+*/ 

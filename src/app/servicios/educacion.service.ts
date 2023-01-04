@@ -10,28 +10,28 @@ export class EducacionService {
   editEducacion() {
     throw new Error('Method not implemented.');
   }
-  url = 'http://localhost:8080/educacion/';
+  url = `http://localhost:8080/educacion/`;
   updateEducacion: any;
 
   constructor(private http:HttpClient) { }
 
 public verEducaciones(): Observable<Educacion[]>{
-return this.http.get<Educacion[]>(this.url+'ver');
+return this.http.get<Educacion[]>(this.url+`ver`);
 }
 
 public verEducacion(id: number): Observable<Educacion> {
-  return this.http.get<Educacion>(this.url + 'ver/${id}');
+  return this.http.get<Educacion>(this.url+`ver/${id}`);
 }
 
 public agregarEducacion(edu: Educacion): Observable<any> {
-  return this.http.post<any>(this.url + 'new', edu);
+  return this.http.post<any>(this.url + `new`, edu);
 }
 
-public eliminarEducacion(id: number): Observable<Educacion> {
-  return this.http.delete<any>(this.url + 'eliminar/${id}');
+public eliminarEducacion(id:number): Observable<Educacion> {
+  return this.http.delete<any>(this.url + 'delete/' + id);
 }
 
 public editarEducacion(edu: Educacion): Observable<any> {
-  return this.http.put<any>(this.url + 'editar/${id}', edu);
+  return this.http.put<Educacion>(this.url + `editar/$`, edu);
 }
 }

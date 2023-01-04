@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
 import { Educacion } from 'src/app/model/educacion';
-
-
 import { EducacionService } from 'src/app/servicios/educacion.service';
 
 @Component({
@@ -13,104 +10,98 @@ import { EducacionService } from 'src/app/servicios/educacion.service';
 })
 export class ModalEducacionComponent implements OnInit {
   form: FormGroup;
-  educaciones: Educacion[]=[];
+  educaciones: Educacion[] = [];
 
-  constructor( private formBuilder: FormBuilder, private EducacionS:EducacionService) {
-    //Creamos el grupo de controles para el formulario 
-
+  constructor(private formBuilder: FormBuilder, private EducacionS: EducacionService
+    /* esto está en lo de Heber-----, private activateRoute:ActivatedRoute, private router:Router*/) {
+    
+    
+      //Creamos el grupo de controles para el formulario 
     this.form = this.formBuilder.group({
       id: [''],
-      tipo: ['', [Validators.required]],
-      nombre: ['',[Validators.required]],
-      domicilio: [''],
-      email: [''],
-      estaHoy:[''],
-      telefono: [''],
+      nombre: ['', [Validators.required]],
       lugar: [''],
+      telefono: [''],
+      email: [''],
+      domicilio: [''],
       inicioFecha: [''],
       finFecha: [''],
+      tipo: ['', [Validators.required]],
+      estaHoy: [''],
     })
-   }
+  }
 
   ngOnInit(): void {
     this.cargarEducacion();
   }
-  /*get Tipo(){
-    return this.form.get("tipo");
-  }
-  get Nombre(){
-    return this.form.get("nombre");
-  }*/
-cargarEducacion(): void{
-  this.EducacionS.verEducaciones().subscribe(
-    data => {
-      this.educaciones = data;
-    }
-  )
-}
-
-cargarDetalle(id:number){
-  this.EducacionS.verEducacion(id).subscribe(
-    {
-      next : (data) => {
-      this.form.setValue(data);
-    },
-    error: (e) => {
-      console.error(e)
-      alert("error al modificar")
-    },
-    complete: () => console.info('complete aqui')
-  }
-)
-}
-//👇 esto es solo para hacer pruebas en local
-
-
-guardar() {
-  console.log("FUNCIONA!!!")
-let edu = this.form.value;
-console.log()
-
-if (edu.id == '') {
-this.EducacionS.agregarEducacion(edu).subscribe(
-  data => {
-    alert("Su nueva Educación fue añadida correctamente");
-    this.cargarEducacion();
-    this.form.reset();
-  }
-  )
-} else 
-{
-  this.EducacionS.editarEducacion(edu).subscribe(
-  data => {
-      alert("Educación editada!!! UIHUUU!!!!");
-      this.cargarEducacion();
-      this.form.reset();
-    }
-  )
-}
-}
-
-borrar(id: number) {
-this.EducacionS.eliminarEducacion(id).subscribe(
-  {
-    next: data => {
-      alert("se pudo eliminar satisfactoriamente");
-      this.cargarEducacion()
-    },
-    error: err => {
-      console.error(err)
-      alert("No se pudo eliminar")
-        }
+  
+  cargarEducacion(): void {
+    this.EducacionS.verEducaciones().subscribe(
+      data => {
+        this.educaciones = data;
       }
     )
   }
 
-  
+  cargarDetalle(id: number) {
+    this.EducacionS.verEducacion(id).subscribe(
+      {
+        next: (data) => {
+          this.form.setValue(data);
+        },
+        error: (e) => {
+          console.error(e)
+          alert("error al modificar")
+        },
+        complete: () => console.info('complete aqui')
+      }
+    )
+  }
+  //👇 esto es solo para hacer pruebas en local
 
-}
 
-      
+  guardar() {
+    console.log("FUNCIONA!!!")
+    let edu = this.form.value;
+    console.log()
+
+    if (edu.id == '') {
+      this.EducacionS.agregarEducacion(edu).subscribe(
+        data => {
+          alert("Su nueva Educación fue añadida correctamente");
+          this.cargarEducacion();
+          this.form.reset();
+        }
+      )
+    } else {
+      this.EducacionS.editarEducacion(edu).subscribe(
+        data => {
+          alert("Educación editada!!! UIHUUU!!!!");
+          this.cargarEducacion();
+          this.form.reset();
+        }
+      )
+    }
+  }
+
+  borrar(id: number) {
+    this.EducacionS.eliminarEducacion(id).subscribe(
+      db => {
+          alert("se pudo eliminar satisfactoriamente")
+          this.cargarEducacion()
+        },
+        error => {
+        alert("No se pudo eliminar")
+        })
+      }
+    
+  }
+
+
+
+
+
+
 
 
 

@@ -7,7 +7,7 @@ import { __values } from 'tslib';
   providedIn: 'root'
 })
 export class AutenticacionService {
-  url="http://localhost8080/autenticacion/login";
+  url="http://localhost8080/autenticacion/login/";
   currentUserSubject: BehaviorSubject<any>;
   sessionStorage:any;
 

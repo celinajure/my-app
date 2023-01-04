@@ -9,22 +9,7 @@
 
       <form [formGroup]="form" name="educacionform">
         <div class="modal-body">
-          <!--select class="form-select mb-3" aria-label="Default select example">
-            <option selected>elija una opción</option>
-            <option value="1">CV</option>
-            <option value="2">Primaria</option>
-            <option value="3">Secundaria</option>
-            <option value="4">Escuela Prov. de Danzas </option>
-            <option value="5">Teatro Colón</option>
-            <option value="6">Utaki</option>
-            <option value="7">Fau UBA</option>
-            <option value="8">Escuela de Bellas Artes "P. Pueyrredón"</option>
-            <option value="9">École de Beeaux-Arts, Nimes</option>
-            <option value="10">Kunstakademie Düsseldorf</option>
-            <option value="11">Cursos</option>
-            <option value="12">Argentina Programa</option>
-            <option value="13">NUEVA</option>
-          </select-->
+        
           <ul class="p-0">
             <li *ngFor="let educacion of educaciones" class="d-flex justify-content-between align-items-center m-1 ">
               <span>{{educacion.id}}. {{educacion.nombre|uppercase}}</span>
@@ -51,7 +36,7 @@
 
           <div class="mb-3">
             <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" formControlName="nombre" [ngClass]="{'is-invalid': form.get('nombre')?.errors && form.get('nombre')?.touched, 'is-valid': form.get('nombre')?.errors && form.get('nombre')?.touched}">
+            <input type="text" class="form-control" id="nombre" placeholder="campo obligatorio" formControlName="nombre" [ngClass]="{'is-invalid': form.get('nombre')?.errors && form.get('nombre')?.touched, 'is-valid': form.get('nombre')?.errors && form.get('nombre')?.touched}">
             <p class="text-danger"
               *ngIf="form.get('nombre')?.touched && form.get('nombre')?.errors?.['required']">
               El Nombre de la Educacion es requerido.
@@ -60,15 +45,12 @@
 
           <div class="mb-3">
             <label for="tipo" class="form-label">nivel educativo</label>
-            <input type="text" class="form-control" id="tipo" formControlName="tipo" [ngClass]="{'is-invalid': form.get('tipo')?.errors && form.get('tipo')?.touched, 'is-valid': form.get('tipo')?.errors && form.get('tipo')?.touched}">
+            <input type="text" class="form-control" id="tipo" formControlName="tipo" placeholder="campo obligatorio"[ngClass]="{'is-invalid': form.get('tipo')?.errors && form.get('tipo')?.touched, 'is-valid': form.get('tipo')?.errors && form.get('tipo')?.touched}">
             <p class="text-danger"
               *ngIf="form.get('tipo')?.touched && form.get('tipo')?.errors?.['required']">
                   El Nivel Educativo es requerido!
                 </p>
               </div>
-
-
-
 
             <div class="mb-3">
               <label for="lugar" class="form-label">lugar</label>
@@ -77,22 +59,27 @@
 
             <div class="mb-3">
               <label for="inicioFecha" class="form-label">fecha de inicio</label>
-              <input type="date" class="form-control" id="fecha de inicio" placeholder="fecha de inicio" formControlName="inicioFecha">
+              <input type="date" class="form-control" id="fecha de inicio" placeholder="" formControlName="inicioFecha">
             </div>
 
             <div class="mb-3">
               <label for="finFecha" class="form-label">fecha de finalización</label>
-              <input type="date" class="form-control" id="fecha de finalización" placeholder="fecha de  finalización" formControlName="finFecha">
+              <input type="date" class="form-control" id="fecha de finalización" placeholder="" formControlName="finFecha">
             </div>
 
-            <div class="mb-3">
-              <label for="estaHoy" class="form-label">es actual?</label>
-              <input type="text" class="form-control" id="estaHoy" placeholder="estahoy" formControlName="estaHoy">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" formControlName="estaHoy">
+              <label class="form-check-label" for="flexSwitchCheckDefault">es actual?</label>
             </div>
 
             <div class="mb-3">
               <label for="domicilio" class="form-label">domicilio</label>
-              <input type="text" class="form-control" id="domicilio" placeholder="domicilio" formControlName="domicilio">
+              <input type="text" class="form-control" id="domicilio" placeholder="" formControlName="domicilio">
+            </div>
+
+            <div class="mb-3">
+              <label for="telefono" class="form-label">teléfono</label>
+              <input type="text" class="form-control" id="telefono" placeholder="" formControlName="telefono">
             </div>
 
             <div class="mb-3">
@@ -100,14 +87,6 @@
               <input type="email" class="form-control" id="email" placeholder="email" formControlName="email">
             </div>
 
-            <div class="mb-3">
-              <label for="telefono" class="form-label">Teléfono</label>
-              <input type="text" class="form-control" id="telefono" placeholder="ftelefono" formControlName="telefono">
-            </div>
-          
-          <!--div class="modal-footer">
-            <button type="button" class="btn btn-secundary">GUARDAR</button>
-          </div-->
           <div class="modal-footer">
             <button class="btn btn-secondary" (click)="form.reset()">RESET</button>
             <button class="btn btn-secondary" (click)="guardar()"[disabled]="form.invalid">GUARDAR DATOS</button>

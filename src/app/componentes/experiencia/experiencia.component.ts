@@ -10,6 +10,7 @@ import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 
 export class ExperienciaComponent implements OnInit {
 experiencias:Experiencia[]=[];
+
   constructor(private datos:ExperienciaService) { }
 
   ngOnInit(): void {

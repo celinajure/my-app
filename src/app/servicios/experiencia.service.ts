@@ -7,28 +7,31 @@ import { Experiencia } from '../model/experiencia';
   providedIn: 'root'
 })
 export class ExperienciaService {
+  editExperiencia() {
+    throw new Error('Method not implemented.');
+  }
   url = 'http://localhost:8080/experiencia/';
+  updateExperiencia: any;
 
   constructor(private http:HttpClient) { }
 
-public verExperiencias(): Observable<Experiencia[]>{
-return this.http.get<Experiencia[]>(this.url+'ver');
-}
-
-
-public verExperiencia(id: number): Observable<Experiencia> {
-  return this.http.get<Experiencia>(this.url + 'ver/${id}');
-}
-
-public agregarExperiencia(expe: Experiencia): Observable<any> {
-  return this.http.post<any>(this.url + 'new', expe);
-}
-
-public editarExperiencia(expe: Experiencia): Observable<any> {
-  return this.http.put<any>(this.url + 'editar', expe);
-}
-
-public eliminarExperiencia(id: number): Observable<Experiencia> {
-  return this.http.get<Experiencia>(this.url + 'eliminar/${id}')
-};
-}
+  public verExperiencias(): Observable<Experiencia[]>{
+    return this.http.get<Experiencia[]>(this.url+`ver`);
+    }
+    
+    public verExperiencia(id: number): Observable<Experiencia> {
+      return this.http.get<Experiencia>(this.url+`ver/${id}`);
+    }
+    
+    public agregarExperiencia(expe: Experiencia): Observable<any> {
+      return this.http.post<any>(this.url + `new`, expe);
+    }
+    
+    public eliminarExperiencia(id:number): Observable<Experiencia> {
+      return this.http.delete<any>(this.url + 'delete/' + id);
+    }
+    
+    public editarExperiencia(expe: Experiencia): Observable<any> {
+      return this.http.put<Experiencia>(this.url + `editar/$`, expe);
+    }
+    }

@@ -30,11 +30,11 @@ export class EducacionComponent implements OnInit {
 
     //this.educacionService.verEducaciones().subscribe(data =>{this.educaciones=data});
   }
- // AQUI VENDRÍASN LOS METODOS QUE TRAEMOS DEL SERVICE
+ // AQUI VENDRÍAN LOS METODOS QUE TRAEMOS DEL SERVICE
  /*idEdit(id:number){
 this.istTrue=true;
 this:idEditar=id;
- }*/
+ }
  /*agregarEducacion(edu: Educacion):void{
   this.educaciones.new().subscribe(info=>{this.educaciones=info});
  }
