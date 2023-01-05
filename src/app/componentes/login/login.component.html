@@ -6,7 +6,7 @@
             <div class="col-2">
             </div>
 
-            <div class="col-8 formulario-login">
+           <!----> <div class="col-8 formulario-login">
                 <form [formGroup]="form" name="loginform" (ngSubmit)="onEnviar($event)">
                     <div class="modal-body">
                         <div class="row">
@@ -16,7 +16,7 @@
                                 <input type="email" pattern="[^ @]*@[^ @]*" formControlName="email" class="form-control"
                                     [(ngModel)]="persona.email"
                                     [ngClass]="{'is-invalid': Email.errors && Email.touched, 'is-valid': !Email.errors && Email.touched}"
-                                    id="staticEmail" value="email@example.com">
+                                    id="staticEmail" value="">
                                 <div *ngIf="Email.errors && Email.touched">
                                     <p *ngIf="Email.hasError('required')" class="text-white">
                                         Ingrese su email!!!!!

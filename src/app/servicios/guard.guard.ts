@@ -22,7 +22,7 @@ export class GuardGuard implements CanActivate {
       return true;
     }
     else{
-      this.rutas.navigate(['/'])
+      this.rutas.navigate(['/error404'])
       return false;
     }
     

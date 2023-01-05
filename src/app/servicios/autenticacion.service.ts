@@ -10,6 +10,7 @@ export class AutenticacionService {
   url="http://localhost8080/autenticacion/login/";
   currentUserSubject: BehaviorSubject<any>;
   sessionStorage:any;
+  usuarioAutenticado: any;
 
   constructor(private http:HttpClient) {
     this.currentUserSubject=new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem('currentUser')|| '{}'));
@@ -27,8 +28,20 @@ return data
 }));
 
 }
+}
+/*
+loginPersona(credenciales:any): Observable<any>
+   {
+    return this.http.post(this.url, credenciales).pipe(map(data=>{
+
+        sessionStorage.setItem('currentUser', JSON.stringify(data));
+        this.currentUserSubject.next(data);
+      return data;
+    }))
+
+   }
  get usuarioAutenticado(){
   
   return this.currentUserSubject.value;
  }
-}
+}*/

@@ -16,11 +16,14 @@ import { Persona } from 'src/app/model/persona';
 export class LoginComponent implements OnInit {
   form: FormGroup;
   email = '';
-  password = '';
-  //authService: any;
+  clave = '';
+  authService: any;
   
   persona: Persona = new Persona("", "", "", "", "", "", "", "", "", "", "",);
   
+ 
+ 
+ 
   constructor(private ruta: Router, private formBuilder: FormBuilder, private autService: AutenticacionService) {
     this.form=this.formBuilder.group(
       {
@@ -50,8 +53,9 @@ get PasswordValid(){
   get MailValid(){
   return this.Email?.touched && !this.Email?.valid;
   }
-onEnviar(event: Event){
+/*onEnviar(event: Event){
   event.preventDefault;
+  
   this.autService.loginPersona(this.form.value).subscribe(data =>
     {
       console.log("DATA: " + JSON.stringify(data));
@@ -59,12 +63,26 @@ onEnviar(event: Event){
     this.ruta.navigate(['/panel'])
    
       },error=>{
-        console.log(error);
+        alert("ERROR PUFF!!");
       }
       )
+    }*/
+    onEnviar(event: Event){
+      event.preventDefault;
+      if (this.form.valid){
+      this.autService.loginPersona(JSON.stringify(this.form.value)).subscribe(data =>
+        {
+          console.log("DATA: " + JSON.stringify(data));
+         this.ruta.navigate(['/panel'])
+        }, error =>{
+          alert("error al iniciar sesion")
+        })
+        //this.ruta.navigate([''])
+      }  else {
+        alert("Hay un error en el formulario")
+      }
     }
-    
-    };
+    }
   
 
 
@@ -157,8 +175,5 @@ let pers:Persona = new Persona("", "", "", "", "", "", "",this.form.get("email")
 
 
 /* esto es de Josman
-this.autenticacionService.IniciarSesion(this.form.value).subscribe(data => { 
-      //console.log("DATA:" + JSON.stringify(data));       
-    })       
-    this.ruta.navigate(['/portfolio']);
+
 */ 
