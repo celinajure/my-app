@@ -34,9 +34,9 @@ export class LoginComponent implements OnInit {
    }
  
   ngOnInit(): void {
+    sessionStorage.setItem('currentUser',null);
   }
  
-
 get Email(){
    return this.form.get('email');
   }
@@ -68,18 +68,22 @@ get PasswordValid(){
       )
     }*/
     onEnviar(event: Event){
+      console.log ("QUIZA ME ALEGRO!!!");
       event.preventDefault;
       if (this.form.valid){
-      this.autService.loginPersona(JSON.stringify(this.form.value)).subscribe(data =>
+        console.log (JSON.stringify(this.form.value));
+      this.autService.loginPersona(this.form.value).subscribe(data =>
         {
           console.log("DATA: " + JSON.stringify(data));
-         this.ruta.navigate(['/panel'])
+         this.ruta.navigate(['/panel']);
         }, error =>{
-          alert("error al iniciar sesion")
+          alert("error al iniciar sesion");
+          this.ruta.navigate(['/']);
         })
-        //this.ruta.navigate([''])
+        
       }  else {
-        alert("Hay un error en el formulario")
+        sessionStorage.setItem('currentUser', null);
+        alert("E R R O R ! ! !");
       }
     }
     }

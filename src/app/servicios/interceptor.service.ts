@@ -16,7 +16,7 @@ export class InterceptorService implements HttpInterceptor {
     if (currentUser && currentUser.id) {
       req.clone({
         setHeaders:{
-          Authorization: `Bearer ${currentUser.id}` //me devuelve los datos de la persona
+          Authorization: `Bearer${currentUser.id}` //me devuelve los datos de la persona
         }
       })
     }

@@ -17,12 +17,13 @@ export class GuardGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     let currentUser = this.autenticacionServicio.usuarioAutenticado;
-    if(currentUser && currentUser.autenticacionService){
+    
+    if(currentUser && currentUser.id){
       this.rutas.navigate(['/panel'])
       return true;
     }
     else{
-      this.rutas.navigate(['/error404'])
+      this.rutas.navigate(['/'])
       return false;
     }
     

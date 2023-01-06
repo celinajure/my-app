@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DatosService } from 'src/app/servicios/datos.service'; 
+import { PersonaService } from 'src/app/servicios/persona.service';
+
 
 @Component({
   selector: 'app-logout',
@@ -7,10 +10,39 @@ import { DatosService } from 'src/app/servicios/datos.service';
   styleUrls: ['./logout.component.css']
 })
 export class LogoutComponent implements OnInit {
-logouts:any;
-  constructor(private datos: DatosService) { }
+  modoEdit:any;
+  persona: any;
+  constructor(private datos: DatosService, private ruta: Router ,private personaService: PersonaService) { }
 
   ngOnInit(): void {
+ 
+      this.personaService.verPersonas().subscribe(data =>{
+        this.persona = data
+      });
+      if (sessionStorage.getItem('currentUser') == "null"){
+        this.modoEdit = false;
+      }else if (sessionStorage.getItem('currentUser') == null){
+        this.modoEdit = false;
+      }
+    
   }
 
+cerrarSesion(){
+  sessionStorage.setItem('currentUser',null);
+  this.modoEdit = false;
+  alert("sesion cerrada");
+
+  window.sessionStorage.removeItem;
+  this.ruta.navigate(['/']);
+
+  
+
 }
+}
+/*cerrarSesion(){
+  sessionStorage.setItem('currentUser', "null");
+  this.modoEdit = false;
+  alert("sesion cerrada");
+  window.location.reload();
+  return this.modoEdit;
+}*/

@@ -16,7 +16,7 @@
                                 <input type="email" pattern="[^ @]*@[^ @]*" formControlName="email" class="form-control"
                                     [(ngModel)]="persona.email"
                                     [ngClass]="{'is-invalid': Email.errors && Email.touched, 'is-valid': !Email.errors && Email.touched}"
-                                    id="staticEmail" value="">
+                                    id="email" value="">
                                 <div *ngIf="Email.errors && Email.touched">
                                     <p *ngIf="Email.hasError('required')" class="text-white">
                                         Ingrese su email!!!!!
@@ -36,7 +36,7 @@
                                 <input type="password" formControlName="clave" class="form-control"
                                     [(ngModel)]="persona.clave"
                                     [ngClass]="{'is-invalid': Clave.errors && Clave.touched, 'is-valid': !Clave.errors && Clave.touched}"
-                                    id="inputPassword">
+                                    id="clave">
                                 <div *ngIf="Clave.errors && Clave.touched">
                                     <p *ngIf="Clave.hasError('required')" class="text-white">
                                         La contraseña es requerida!!!
@@ -51,13 +51,11 @@
                         </div>
 
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary"><a routerLink="/panel">iniciar
+                            <button type="submit" class="btn btn-primary"><a>iniciar
                                     sesión</a></button>
                         </div>
 
-                        <div><small>si no tenes cuenta <a routerLink="/registrate">registrate</a>
-                            </small></div>
-                    </div>
+                        </div>
                     <div class="col-2">
                     </div>
                 </form>
