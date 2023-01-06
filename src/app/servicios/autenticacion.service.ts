@@ -23,15 +23,10 @@ return this.http.post<any>(this.url, credenciales, httpOptions).pipe(map(data =>
 sessionStorage.setItem('currentUser',JSON.stringify(data));
 this.currentUserSubject.next(data);
 console.log("Servicio esta corriendo" + JSON.stringify(data));
-
 return data
-
 }));
-
-
 }
- get usuarioAutenticado(){
-  
+ get usuarioAutenticado(){  
   return this.currentUserSubject.value;
  }
 }

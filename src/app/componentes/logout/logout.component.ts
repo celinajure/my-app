@@ -24,19 +24,15 @@ export class LogoutComponent implements OnInit {
       }else if (sessionStorage.getItem('currentUser') == null){
         this.modoEdit = false;
       }
-    
   }
 
 cerrarSesion(){
   sessionStorage.setItem('currentUser',null);
   this.modoEdit = false;
-  alert("sesion cerrada");
+  alert("SESIÓN CERRADA");
 
   window.sessionStorage.removeItem;
   this.ruta.navigate(['/']);
-
-  
-
 }
 }
 /*cerrarSesion(){

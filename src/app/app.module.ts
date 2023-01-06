@@ -27,13 +27,9 @@ import { ModalNavbarComponent } from './modal/navbar-modal/modal-navbar.componen
 import { RedesModalComponent } from './modal/redes-modal/redes-modal.component';
 import { ModalRegistrateComponent } from './modal/registrate-modal/modal-registrate.component';
 import { ModalPanelComponent } from './modal/panel--modal/modal-panel.component';
-
 import { ModalHardSkillsComponent } from './modal/hard-skills-modal/modal-hard-skills.component';
 import { InterceptorService } from './servicios/interceptor.service';
 import { PersonaService } from './servicios/persona.service';
-
-
-
 
 
 
@@ -57,19 +53,14 @@ import { PersonaService } from './servicios/persona.service';
     BotonLoginComponent,
     ModalEducacionComponent,
     ModalExperienciaComponent,
-
     ModalHardSkillsComponent,
     ModalNavbarComponent,
-
     ModalPanelComponent,
     ModalProyectoComponent,
     ModalRegistrateComponent,
     ModalSobreMiComponent,
     NavbarComponent,
-
     RedesModalComponent,
-
-
 
   ],
   imports: [
