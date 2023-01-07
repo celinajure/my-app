@@ -6,42 +6,50 @@
           <h1 class="modal-title fs-5" id="exampleModalLabel">HARD & SKILLS</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+
         <form [formGroup]="form" name="habilidadform">
         <div class="modal-body">
-          <select class="form-select mb-3" aria-label="Default select example">
-            <option selected>elija una opción</option>
-            <option value="1">HTML</option>
-            <option value="2">CSS</option>
-            <option value="3">ANGULAR</option>
-            <option value="4">DIRECCION DE OBRAS</option>
-            <option value="5">ALEMAN</option>
-            <option value="6">INGLÉS</option>
-            <option value="7">HOLANDES Y FRANCES</option>
-            <option value="9">FLEXIBILIDAD</option>
-            <option value="10">AUTONOMIA Y TOMA DE DECISIONES</option>
-            <option value="11">COMUNICACION</option>
-            <option value="11">Nueva Habilidad</option>
-           </select>
-           
+          
+          <ul class="p-0">
+            <li *ngFor="let habilidad of habilidades" class="d-flex justify-content-between align-items-center m-1 "> 
+              <span>{{habilidad.id}}. {{habilidad.habilidad|uppercase}}</span>
+              <span class="d-flex justify-content-between gap-2">
+                <!--lapicito rojo que se cambia al tocarlo-->
+                  <button type="button" class="btn btn-sm btn-outline-success pl-1 pr-1 m-0" (click)="cargarDetalle(habilidad.id)">
+                    <i class="fa-solid fa-pen"></i>
+                  </button>
+                  <!--Tachico de Basura que se hace fondo rojo al tocarlo-->
+                  <button type="button" class="btn btn-sm btn-outline-danger pl-1 pr-1 m-0" (click)="borrar(habilidad.id)">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </span>
+              </li>
+            </ul>
+  <!--esto es la validacion  renderizado condicional-->
+            <div class="input-group mb-3 bg-light" *ngIf="!!form.value.id">
+              <div class="input-group-prepend border-0">
+                <span class="input-group-text border-0" id="basic-addon1">ID:</span>
+              </div>
+              <input class="form-control outline-none border-0 bg-transparent" type="text" readonly formControlName="id">
+            </div>
+
            <div class="mb-3">
-            <label for="nombre" class="form-label">nombre de la habilidad</label>
-            <input type="text" class="form-control" id="nombre" placeholder="complete aquí" 
-            formControlName="nombre"
-              [ngClass]="{'is invalid':Nombre.errors && Nombre.touched, 'is valid':!Nombre.errors && Nombre.touched}">
-            <div *ngIf="Nombre.errors && Nombre.touched">
-              <p *ngIf="Nombre.hasError('required')" class="text-danger">
+            <label for="nombre" class="form-label">Nombre de la Habilidad</label>
+            <input type="text" class="form-control" id="nombre" placeholder="campo obligatorio" formControlName="nombre" [ngClass]="{'is-invalid': form.get('nombre')?.errors && form.get('nombre')?.touched, 'is-valid': form.get('nombre')?.errors && form.get('nombre')?.touched}">
+            <p class="text-danger"
+              *ngIf="form.get('nombre')?.touched && form.get('nombre')?.errors?.['required']">
                 El Nombre de la Habilidad es requerida!
               </p>
             </div>
-          </div>
+        
 
           
           <div class="mb-3">
-            <label for="porcentaje" class="form-label">elegir un valor</label>
-            <input type="number" min="0" max="100" id="habilidadPorcentaje" formControlName="porcentaje"
-            [ngClass]="{'is invalid':Porcentaje.errors && Porcentaje.touched,'is orcentaje':!Porcentaje.errors && Porcentaje.touched}"> 
-            <div *ngIf="Porcentaje.errors && Porcentaje.touched">
-              <p *ngIf="Porcentaje.hasError('required')" class="text-danger">
+            <label for="porcentaje" class="form-label">Valor entre 1 y 100 de la Habilidad:  </label>
+            <input type="number" min="0" max="100" id="habilidad" formControlName="porcentaje"
+            [ngClass]="{'is-invalid': form.get('porcentaje')?.errors && form.get('porcentaje')?.touched, 'is-valid': form.get('porcentaje')?.errors && form.get('porcentaje')?.touched}">
+            <p class="text-danger"
+              *ngIf="form.get('porcentaje')?.touched && form.get('porcentaje')?.errors?.['required']">
                 El Porcentaje es requerido!
               </p>
               <p *ngIf="Porcentaje.hasError('min')" class="text-danger">
@@ -57,17 +65,22 @@
             <label for="descripción" class="form-label">descripción</label>
             <textarea  class="form-control" id="descripción" placeholder="opcional"></textarea>
           </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secundary">GUARDAR</button>
-        </div>
-        </div>
+          
+          
+
+          <div class="modal-footer">
+            <button class="btn btn-secondary" (click)="form.reset()">RESET</button>
+            <button class="btn btn-secondary" (click)="guardar()"[disabled]="form.invalid">GUARDAR DATOS</button>
+          </div>
+       
+        
       </form>
     </div>
   </div>
   </div>
   <!--FIN deModal PEN de HARD&SKILLS-->
 
-  <!--Modal TRASH de HARD&SKILLS-->
+  <!--Modal TRASH de HARD&SKILLS
   <div class="modal fade" id="hardyskillsModaltrash" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -97,6 +110,6 @@
     </div>
   </div>
   </div>
-  <!--FIN deModal TRASH de HARD&SKILLS-->
+  FIN deModal TRASH de HARD&SKILLS-->
 
 

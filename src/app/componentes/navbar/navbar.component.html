@@ -10,8 +10,8 @@
       <div *ngFor="let red of redes">
         <li class="list-group-item"><a [href]="red.url" target="blank"><i [ngClass]="red.icoFont"></i></a></li>
       </div><!--Button trigger modal BOTON QUE ABRE EL LOGIN-->
-      <app-boton-login></app-boton-login>
-      <app-logout></app-logout>
+      <app-boton-login *ngIf="!usuarioAuth"></app-boton-login>
+      <app-logout *ngIf="usuarioAuth"></app-logout>
     </ul>
 
   </div>

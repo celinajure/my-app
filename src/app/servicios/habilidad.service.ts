@@ -8,28 +8,28 @@ import {Habilidad} from '../model/habilidad';
   providedIn: 'root'
 })
 export class HabilidadService {
-  url = 'http://localhost:8080/habilidad/';
-
+  url = `http://localhost:8080/habilidad/`;
+  updateHabilidad: any;
   constructor(private http:HttpClient) { }
 
 public verHabilidades(): Observable<Habilidad[]>{
-return this.http.get<Habilidad[]>(this.url+'ver');
+return this.http.get<Habilidad[]>(this.url+`ver`);
 }
 
 public verHabilidad(id: number): Observable<Habilidad> {
-  return this.http.get<Habilidad>(this.url + 'ver/habi/${id}');
+  return this.http.get<Habilidad>(this.url + `ver/${id}`);
 }
 
 public agregarHabilidad(habi: Habilidad): Observable<any> {
-  return this.http.post<any>(this.url + 'new', habi);
+  return this.http.post<any>(this.url + `new`, habi);
 }
 
 public editarHabilidad(habi: Habilidad): Observable<any> {
-  return this.http.put<any>(this.url + 'edit', habi);
+  return this.http.put<any>(this.url + `editar/$`, habi);
 }
 
 public eliminarHabilidad(id: number): Observable<Habilidad> {
-  return this.http.get<Habilidad>(this.url + 'ver/habi/${id}');
+  return this.http.delete<Habilidad>(this.url + `delete/` + id);
 }
 
 

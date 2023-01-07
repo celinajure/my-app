@@ -9,7 +9,7 @@ import { DatosService } from 'src/app/servicios/datos.service';
 })
 export class NavbarComponent implements OnInit {
 redes: any;
-
+usuarioAuth: boolean= false;
   constructor(private datos: DatosService) { }
 
   ngOnInit(): void {
