@@ -12,23 +12,22 @@ export class RedesService {
   constructor(private http:HttpClient) { }
 
 public verRedes(): Observable<Redes[]>{
-return this.http.get<Redes[]>(this.url+'ver');
+return this.http.get<Redes[]>(this.url+`ver`);
 }
 
 public verRed(id:number): Observable<Redes>{
-  return this.http.get<Redes>(this.url+'ver/${id}');
+  return this.http.get<Redes>(this.url+`ver/${id}`);
 }
 
 public agregarRed(red: Redes): Observable<any> {
-  return this.http.post<any>(this.url + 'new', red);
-}
-
-public editarRed(red: Redes): Observable<any> {
-  return this.http.put<any>(this.url + 'edit', red);
+  return this.http.post<any>(this.url + `new`, red);
 }
 
 public eliminarRed(id: number): Observable<Redes> {
-  return this.http.get<Redes>(this.url + 'ver/red/${id}');
+  return this.http.delete<any>(this.url + 'delete/' + id);
 }
 
+public editarRed(red: Redes): Observable<any> {
+  return this.http.put<Redes>(this.url + `editar/$`, red);
+}
 }

@@ -11,7 +11,7 @@ import { HabilidadService } from 'src/app/servicios/habilidad.service';
 export class ModalHardSkillsComponent implements OnInit {
   form: FormGroup;
   habilidades: Habilidad []=[];
-Porcentaje: any;
+porcentaje: any;
 //Porcentaje: any;
 
 
@@ -19,9 +19,10 @@ Porcentaje: any;
   constructor(private HabilidadS: HabilidadService, private formBuilder: FormBuilder) { 
 
     //Creamos el grupo de controles para el formulario 
+    
     this.form = this.formBuilder.group({
       id: [''],
-      nombre: ['', [Validators.required]],
+      nombre:  ['', [Validators.required]],
       porcentaje: ['', [Validators.required, Validators.min, Validators.max]],
     })
   }
@@ -53,8 +54,6 @@ Porcentaje: any;
     )
   }
 //👇 esto es solo para hacer pruebas en local
-
-
 guardar() {
   console.log("FUNCIONA!!!")
   let habi = this.form.value;

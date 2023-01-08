@@ -7,27 +7,31 @@ import { Proyecto } from '../model/proyecto';
   providedIn: 'root'
 })
 export class ProyectoService {
-  url = 'http://localhost:8080/proyecto/';
+  editProyecto() {
+    throw new Error('Method not implemented.');
+  }
+  url = `http://localhost:8080/proyecto/`;
+  updateProyecto: any;
 
   constructor(private http:HttpClient) { }
 
   public verProyectos(): Observable<Proyecto[]> {
-    return this.http.get<Proyecto[]>(this.url + 'ver');
+    return this.http.get<Proyecto[]>(this.url + `ver`);
   }
 
   public verProyecto(id: number): Observable<Proyecto> {
-    return this.http.get<Proyecto>(this.url + 'ver/${id}');
+    return this.http.get<Proyecto>(this.url + `ver/${id}`);
   }
 
   public agregarProyecto(proye: Proyecto): Observable<any> {
-    return this.http.post<any>(this.url + 'new', proye);
+    return this.http.post<any>(this.url + `new`, proye);
   }
 
   public editarProyecto(proye: Proyecto): Observable<any> {
-    return this.http.put<any>(this.url + 'edit', proye);
+    return this.http.put<Proyecto>(this.url + `editar`, proye);
   }
 
   public eliminarProyecto(id: number): Observable<Proyecto> {
-    return this.http.get<Proyecto>(this.url + 'ver/proye/${id}');
+    return this.http.delete<Proyecto>(this.url + `delete/`);
   }
 }

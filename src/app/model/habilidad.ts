@@ -1,14 +1,12 @@
 export class Habilidad {
     id?: number;
     nombre:string;
-    porcentaje:number;
-habilidad: string;
-
+ porcentaje:number;
 
     constructor(
         nombre: string, 
-        porcentaje: number) {
-       
+        porcentaje: number,) 
+        {
         this.nombre = nombre;
         this.porcentaje = porcentaje;
     }

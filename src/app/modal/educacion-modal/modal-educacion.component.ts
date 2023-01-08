@@ -12,11 +12,12 @@ export class ModalEducacionComponent implements OnInit {
   form: FormGroup;
   educaciones: Educacion[] = [];
 
-  constructor(private formBuilder: FormBuilder, private EducacionS: EducacionService
-    /* esto está en lo de Heber-----, private activateRoute:ActivatedRoute, private router:Router*/) {
+  constructor(private formBuilder: FormBuilder, private EducacionS: EducacionService) {
+    /* esto está en lo de Heber-----, private activateRoute:ActivatedRoute, private router:Router*/
     
     
       //Creamos el grupo de controles para el formulario 
+      
     this.form = this.formBuilder.group({
       id: [''],
       nombre: ['', [Validators.required]],

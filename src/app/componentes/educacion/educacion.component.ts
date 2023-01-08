@@ -23,13 +23,15 @@ export class EducacionComponent implements OnInit {
       this.educaciones = info;
     }
     )
-    
+    }
+
+  }
     //this.datos.agregarEducacion();
 
     //this.datos.eliminarEducacion();
 
     //this.educacionService.verEducaciones().subscribe(data =>{this.educaciones=data});
-  }
+  
  // AQUI VENDRÍAN LOS METODOS QUE TRAEMOS DEL SERVICE
  /*idEdit(id:number){
 this.istTrue=true;
@@ -43,5 +45,5 @@ this:idEditar=id;
       this.educaciones = info;
     }
     )*/
-}
+
 

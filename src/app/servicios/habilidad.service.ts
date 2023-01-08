@@ -8,8 +8,12 @@ import {Habilidad} from '../model/habilidad';
   providedIn: 'root'
 })
 export class HabilidadService {
+  editHabilidad() {
+    throw new Error('Method not implemented.');
+  }
   url = `http://localhost:8080/habilidad/`;
   updateHabilidad: any;
+  
   constructor(private http:HttpClient) { }
 
 public verHabilidades(): Observable<Habilidad[]>{
@@ -21,17 +25,14 @@ public verHabilidad(id: number): Observable<Habilidad> {
 }
 
 public agregarHabilidad(habi: Habilidad): Observable<any> {
-  return this.http.post<any>(this.url + `new`, habi);
-}
-
-public editarHabilidad(habi: Habilidad): Observable<any> {
-  return this.http.put<any>(this.url + `editar/$`, habi);
+  return this.http.post<Habilidad>(this.url + `new`, habi);
 }
 
 public eliminarHabilidad(id: number): Observable<Habilidad> {
   return this.http.delete<Habilidad>(this.url + `delete/` + id);
 }
 
-
-
+public editarHabilidad(habi: Habilidad): Observable<any> {
+  return this.http.put<any>(this.url + `editar/$`, habi);
+}
 }

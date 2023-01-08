@@ -9,6 +9,7 @@ import { ProyectoService } from 'src/app/servicios/proyecto.service';
 })
 export class ProyectosComponent implements OnInit {
 proyectos:Proyecto[]=[];
+
   constructor(private datos: ProyectoService) { }
 
   ngOnInit(): void {

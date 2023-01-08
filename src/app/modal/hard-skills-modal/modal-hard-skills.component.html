@@ -11,8 +11,8 @@
         <div class="modal-body">
           
           <ul class="p-0">
-            <li *ngFor="let habilidad of habilidades" class="d-flex justify-content-between align-items-center m-1 "> 
-              <span>{{habilidad.id}}. {{habilidad.habilidad|uppercase}}</span>
+            <li *ngFor="let habilidad of habilidades" class="d-flex justify-content-between align-items-center m-1"> 
+              <span>{{habilidad.id}}. {{habilidad.nombre|uppercase}}</span>
               <span class="d-flex justify-content-between gap-2">
                 <!--lapicito rojo que se cambia al tocarlo-->
                   <button type="button" class="btn btn-sm btn-outline-success pl-1 pr-1 m-0" (click)="cargarDetalle(habilidad.id)">
@@ -52,10 +52,10 @@
               *ngIf="form.get('porcentaje')?.touched && form.get('porcentaje')?.errors?.['required']">
                 El Porcentaje es requerido!
               </p>
-              <p *ngIf="Porcentaje.hasError('min')" class="text-danger">
+              <p *ngIf="porcentaje.hasError('min')" class="text-danger">
                 El Porcentaje mínimo debe ser mayor a 1!
               </p>
-              <p *ngIf="Porcentaje.hasError('max')" class="text-danger">
+              <p *ngIf="porcentaje.hasError('max')" class="text-danger">
                 El Porcentaje  máximo es 100!
               </p>
             </div>
