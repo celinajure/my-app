@@ -7,28 +7,33 @@ import { Persona } from '../model/persona';
   providedIn: 'root'
 })
 export class PersonaService {
-  url = 'http://localhost:8080/persona/';
+  editPersona() {
+    throw new Error('Method not implemented.');
+  }
+  
+  url = `http://localhost:8080/persona/`;
+updatePersona:any;
 
   constructor(private http: HttpClient) { }
 
   public verPersonas(): Observable<Persona[]> {
-    return this.http.get<Persona[]>(this.url + 'ver/persos');
+    return this.http.get<Persona[]>(this.url + `ver`);
   }
 
   public verPersona(id: number): Observable<Persona> {
-    return this.http.get<Persona>(this.url + 'ver/perso/${id}');
+    return this.http.get<Persona>(this.url + `ver/${id}`);
   }
 
   public agregarPersona(per: Persona): Observable<any> {
-    return this.http.post<any>(this.url + 'new', per);
-  }
-
-  public editarPersona(per: Persona): Observable<any> {
-    return this.http.put<any>(this.url + 'editar', per);
+    return this.http.post<Persona>(this.url + `new`, per);
   }
 
   public eliminarPersona(id: number): Observable<Persona> {
-    return this.http.get<Persona>(this.url + 'ver/perso/${id}');
+    return this.http.delete<Persona>(this.url + `delete/` + id);
+  }
+  
+  public editarPersona(per: Persona): Observable<any> {
+    return this.http.put<Persona>(this.url + `editar/$`, per);
   }
 }
 

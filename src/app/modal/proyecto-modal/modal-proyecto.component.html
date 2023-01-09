@@ -35,12 +35,12 @@
             <input class="form-control outline-none border-0 bg-transparent" type="text" readonly formControlName="id">
           </div>
 
-          <div class="mb-3">
+          <div class="mb-2">
             <label for="numero" class="form-label">Proyecto Número:  </label>
             <input type="text" class="form-control" id="numero" placeholder="" formControlName="numero">
           </div>
 
-          <div class="mb-3">
+          <div class="mb-2">
             <label for="nombre" class="form-label">Nombre</label>
             <input type="text" class="form-control" id="nombre" placeholder="campo obligatorio" formControlName="nombre" [ngClass]="{'is-invalid': form.get('nombre')?.errors && form.get('nombre')?.touched, 'is-valid': form.get('nombre')?.errors && form.get('nombre')?.touched}">
             <p class="text-danger"
@@ -49,57 +49,61 @@
             </p>
           </div>
 
-          <div class="mb-3">
-            <label for="telefono" class="form-label">Teléfono</label>
-            <input type="text" class="form-control" id="telefono" placeholder="" formControlName="telefono">
-          </div>
-           
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="" formControlName="email">
-          </div>
-
-          <div class="mb-3">
-            <label for="domicilio" class="form-label">Domicilio</label>
-            <input type="text" class="form-control" id="domicilio" placeholder="" formControlName="domicilio">
-          </div>
-
-          <div class="mb-3">
-            <label for="tipo" class="form-label">Descripción del Proyecto</label>
-            <input type="text" class="form-control" id="descripcion" formControlName="descripcion" placeholder="campo obligatorio"[ngClass]="{'is-invalid': form.get('descripcion')?.errors && form.get('descripcion')?.touched, 'is-valid': form.get('descripcion')?.errors && form.get('descripcion')?.touched}">
-            <p class="text-danger"
-              *ngIf="form.get('descripcion')?.touched && form.get('descripcion')?.errors?.['required']">
-                  La descripción del Proyecto es requerida!
-                </p>
-              </div>
-
-              <div class="mb-3">
-                <label for="inicioFecha" class="form-label">Fecha de Inicio</label>
-                <input type="date" class="form-control" id="fecha de inicio" placeholder="" formControlName="inicioFecha">
-              </div>
-    
-              <div class="mb-3">
-                <label for="finFecha" class="form-label">Fecha de Finalización</label>
-                <input type="date" class="form-control" id="fecha de finalización" placeholder="" formControlName="finFecha">
-              </div>
-
-          <div class="mb-3">
+          <div class="mb-2">
             <label for="tipo" class="form-label">Tipo de Proyecto</label>
             <input type="text" class="form-control" id="tipo" placeholder="dato obligatorio" 
             formControlName="tipo" [ngClass]="{'is-invalid': form.get('tipo')?.errors && form.get('tipo')?.touched, 'is-valid': form.get('tipo')?.errors && form.get('tipo')?.touched}">
             <p class="text-danger"
               *ngIf="form.get('tipo')?.touched && form.get('tipo')?.errors?.['required']">
-                  El Tipo del Proyecto es requerida!
+                  El Tipo de Proyecto es requerido!
               </p>
             </div>
+
+            <div class="mb-2">
+              <label for="tipo" class="form-label">Descripción del Proyecto</label>
+              <input type="text" class="form-control" id="descripcion" formControlName="descripcion" placeholder="campo obligatorio"[ngClass]="{'is-invalid': form.get('descripcion')?.errors && form.get('descripcion')?.touched, 'is-valid': form.get('descripcion')?.errors && form.get('descripcion')?.touched}">
+              <p class="text-danger"
+                *ngIf="form.get('descripcion')?.touched && form.get('descripcion')?.errors?.['required']">
+                    La Descripción del Proyecto es requerido!
+                  </p>
+                </div>
+
+          <div class="mb-2">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="text" class="form-control" id="telefono" placeholder="" formControlName="telefono">
+          </div>
+           
+          <div class="mb-2">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="" formControlName="email">
+          </div>
+
+          <div class="mb-2">
+            <label for="domicilio" class="form-label">Domicilio</label>
+            <input type="text" class="form-control" id="domicilio" placeholder="" formControlName="domicilio">
+          </div>
+
+         
+
+              <div class="mb-2">
+                <label for="inicioFecha" class="form-label">Fecha de Inicio</label>
+                <input type="date" class="form-control" id="fecha de inicio" placeholder="" formControlName="inicioFecha">
+              </div>
+    
+              <div class="mb-2">
+                <label for="finFecha" class="form-label">Fecha de Finalización</label>
+                <input type="date" class="form-control" id="fecha de finalización" placeholder="" formControlName="finFecha">
+              </div>
+
+         
 
           <div class="form-check form-switch">
             <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" formControlName="estaHoy">
             <label class="form-check-label" for="flexSwitchCheckDefault">Es actual?</label>
           </div>
 
-          <div class="mb-3">
-            <label for="imagen1" class="form-label">Imagenes para documentar</label>
+          <div class="mb-2">
+            <label for="imagenes" class="form-label">Imagenes para documentar</label>
             <input class="form-control" type="file" id="imagen"formControlName="imagen1">
             <input class="form-control" type="file" id="imagen"formControlName="imagen2">
             <input class="form-control" type="file" id="imagen"formControlName="imagen3">

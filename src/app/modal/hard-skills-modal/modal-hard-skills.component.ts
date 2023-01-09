@@ -9,9 +9,12 @@ import { HabilidadService } from 'src/app/servicios/habilidad.service';
   styleUrls: ['./modal-hard-skills.component.css']
 })
 export class ModalHardSkillsComponent implements OnInit {
+[x: string]: any;
   form: FormGroup;
   habilidades: Habilidad []=[];
-porcentaje: any;
+
+
+
 //Porcentaje: any;
 
 

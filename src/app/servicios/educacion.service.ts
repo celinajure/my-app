@@ -24,7 +24,7 @@ public verEducacion(id: number): Observable<Educacion> {
 }
 
 public agregarEducacion(edu: Educacion): Observable<any> {
-  return this.http.post<any>(this.url + `new`, edu);
+  return this.http.post<Educacion>(this.url + `new`, edu);
 }
 
 public eliminarEducacion(id:number): Observable<Educacion> {

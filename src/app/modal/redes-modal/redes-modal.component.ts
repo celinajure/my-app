@@ -19,6 +19,7 @@ export class RedesModalComponent implements OnInit {
     //Creamos el grupo de controles para el formulario 
 
     this.form = this.formBuilder.group({
+      
       id: [''],
       url: ['', [Validators.required]],
       icoFont: ['', [Validators.required]],

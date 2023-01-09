@@ -7,8 +7,9 @@ import { Redes } from '../model/redes';
   providedIn: 'root'
 })
 export class RedesService {
-  url = 'http://localhost:8080/redes/';
-
+  url = `http://localhost:8080/red/`;
+  updateRed: any;
+  
   constructor(private http:HttpClient) { }
 
 public verRedes(): Observable<Redes[]>{
@@ -20,7 +21,7 @@ public verRed(id:number): Observable<Redes>{
 }
 
 public agregarRed(red: Redes): Observable<any> {
-  return this.http.post<any>(this.url + `new`, red);
+  return this.http.post<Redes>(this.url + `new`, red);
 }
 
 public eliminarRed(id: number): Observable<Redes> {

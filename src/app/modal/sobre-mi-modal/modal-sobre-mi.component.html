@@ -1,49 +1,98 @@
 <!-- Modal PEN DATOS PERSONALES-->
-<div class="modal fade" id="datosPersonalesModalpen" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">DATOS PERSONALES</h1>
-          
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <form [formGroup]="form" name="redesform">
-        <div class="modal-body">
-          
-          <div class="mb-3">
-            <label for="puesto" class="form-label">nombre</label>
-            <input type="text" class="form-control" id="puesto" placeholder="complete aquí">
-          </div>
-          <div class="mb-3">
-            <label for="descripcion" class="form-label">descripción</label>
-            <input type="text" class="form-control" id="descripcion" placeholder="complete aquí">
-          </div>
-          <div class="mb-3">
-            <label for="imagen1" class="form-label">imagen 1</label>
-            <input type="file" class="form-control" id="exampleFormControlInput1" placeholder="complete aquí">
-          </div>
-          <div class="mb-3">
-            <label for="imagen2" class="form-label">imagen 2</label>
-            <input type="file" class="form-control" id="exampleFormControlInput1" placeholder="complete aquí">
-          </div>
-        </div>
-        <div class="mb-3">
-          <label for="imagen3" class="form-label">imagen 3</label>
-          <input type="file" class="form-control" id="exampleFormControlInput1" placeholder="complete aquí">
-        </div>
-        <div class="mb-3">
-          <label for="imagen4" class="form-label">imagen 4</label>
-          <input type="file" class="form-control" id="exampleFormControlInput1" placeholder="complete aquí">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secundary">GUARDAR</button>
-        </div>
-        </form>
+<div class="modal fade" id="datosPersonalesModalpen" tabindex="-1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">DATOS PERSONALES</h1>
+
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+
+      <form [formGroup]="form" name="redesform">
+        <div class="modal-body">
+
+          <ul class="p-0">
+            <li *ngFor="let persona of personas" class="d-flex justify-content-between align-items-center m-1 ">
+              <span>{{persona.id}}. {{persona.nombre|uppercase}}</span>
+              <span class="d-flex justify-content-between gap-2">
+                <!--lapicito rojo que se cambia al tocarlo-->
+                <button type="button" class="btn btn-sm btn-outline-success pl-1 pr-1 m-0"
+                  (click)="cargarDetalle(persona.id)">
+                  <i class="fa-solid fa-pen"></i>
+                </button>
+                <!--Tachico de Basura que se hace fondo rojo al tocarlo-->
+                <button type="button" class="btn btn-sm btn-outline-danger pl-1 pr-1 m-0" (click)="borrar(persona.id)">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </span>
+            </li>
+          </ul>
+
+
+          
+
+          <div class="mb-2">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" placeholder="campo obligatorio" formControlName="nombre"
+              [ngClass]="{'is-invalid': form.get('nombre')?.errors && form.get('nombre')?.touched, 'is-valid': form.get('nombre')?.errors && form.get('nombre')?.touched}">
+            <p class="text-danger" *ngIf="form.get('nombre')?.touched && form.get('nombre')?.errors?.['required']">
+              El Nombre de la Persona es requerido.
+            </p>
+          </div>
+
+
+
+
+          <div class="mb-2">
+            <label for="anio" class="form-label">Año</label>
+            <input type="text" class="form-control" id="anio" placeholder="campo obligatorio" formControlName="anio"
+              [ngClass]="{'is-invalid': form.get('anio')?.errors && form.get('anio')?.touched, 'is-valid': form.get('anio')?.errors && form.get('anio')?.touched}">
+            <p class="text-danger" *ngIf="form.get('anio')?.touched && form.get('anio')?.errors?.['required']">
+              El Año es requerido.
+            </p>
+          </div>
+
+          <div class="mb-2">
+            <label for="titulo" class="form-label">Título</label>
+            <input type="text" class="form-control" id="titulo" placeholder="campo obligatorio" formControlName="titulo"
+              [ngClass]="{'is-invalid': form.get('anio')?.errors && form.get('titulo')?.touched, 'is-valid': form.get('titulo')?.errors && form.get('titulo')?.touched}">
+            <p class="text-danger" *ngIf="form.get('titulo')?.touched && form.get('titulo')?.errors?.['required']">
+              El Título es requerido.
+            </p>
+          </div>
+
+          <div class="mb-2">
+            <label for="descripcion" class="form-label">Descripción</label>
+            <input type="text" class="form-control" id="nombre" placeholder="campo obligatorio"
+              formControlName="descripcion"
+              [ngClass]="{'is-invalid': form.get('descripcion')?.errors && form.get('descripcion')?.touched, 'is-valid': form.get('descripcion')?.errors && form.get('descripcion')?.touched}">
+            <p class="text-danger"
+              *ngIf="form.get('descripcion')?.touched && form.get('descripcion')?.errors?.['required']">
+              La Descripción es requerida.
+            </p>
+          </div>
+
+          <div class="mb-2">
+            <label for="imagenes" class="form-label">Imagenes para documentar</label>
+            <input class="form-control" type="file" id="imagen"formControlName="imagen1">
+            <input class="form-control" type="file" id="imagen"formControlName="imagen2">
+            <input class="form-control" type="file" id="imagen"formControlName="imagen3">
+            <input class="form-control" type="file" id="imagen"formControlName="imagen4">
+          </div>
+
+          <div class="modal-footer">
+            <button class="btn btn-secondary" (click)="form.reset()">RESET</button>
+            <button class="btn btn-secondary" (click)="guardar()" [disabled]="form.invalid">GUARDAR DATOS</button>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
-  <!-- Modal FIN de PEN DATOS PERSONALES-->
-  <!-- Modal TRASH DATOS PERSONALES-->
+</div>
+
+<!-- Modal FIN de PEN DATOS PERSONALES-->
+<!-- Modal TRASH DATOS PERSONALES
   <div class="modal fade" id="datosPersonalesModaltrash" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -60,4 +109,4 @@
       </div>
     </div>
   </div>
-  <!-- FIN Modal TRASH de DATOS PERSONALES-->
+   FIN Modal TRASH de DATOS PERSONALES-->

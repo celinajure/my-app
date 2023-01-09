@@ -52,18 +52,18 @@
               *ngIf="form.get('porcentaje')?.touched && form.get('porcentaje')?.errors?.['required']">
                 El Porcentaje es requerido!
               </p>
-              <p *ngIf="porcentaje.hasError('min')" class="text-danger">
+              <p *ngIf="form.get('porcentaje')?.hasError('min')" class="text-danger">
                 El Porcentaje mínimo debe ser mayor a 1!
               </p>
-              <p *ngIf="porcentaje.hasError('max')" class="text-danger">
+              <p *ngIf="form.get('porcentaje')?.hasError('max')" class="text-danger">
                 El Porcentaje  máximo es 100!
               </p>
             </div>
-          </div>
+         
 
-          <div class="mb-3">
-            <label for="descripción" class="form-label">descripción</label>
-            <textarea  class="form-control" id="descripción" placeholder="opcional"></textarea>
+          <div class="mb-3 ">
+            <label for="descripción" class="form-label">Descripción</label>
+            <textarea  class="form-control" id="descripción" placeholder=""></textarea>
           </div>
           
           
@@ -73,7 +73,7 @@
             <button class="btn btn-secondary" (click)="guardar()"[disabled]="form.invalid">GUARDAR DATOS</button>
           </div>
        
-        
+        </div>
       </form>
     </div>
   </div>

@@ -5,7 +5,7 @@ export class Habilidad {
 
     constructor(
         nombre: string, 
-        porcentaje: number,) 
+        porcentaje: number) 
         {
         this.nombre = nombre;
         this.porcentaje = porcentaje;

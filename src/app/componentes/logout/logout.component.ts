@@ -19,7 +19,7 @@ export class LogoutComponent implements OnInit {
       this.personaService.verPersonas().subscribe(data =>{
         this.persona = data
       });
-      if (sessionStorage.getItem('currentUser') == "null"){
+      if (sessionStorage.getItem('currentUser') == null){
         this.modoEdit = false;
       }else if (sessionStorage.getItem('currentUser') == null){
         this.modoEdit = false;
