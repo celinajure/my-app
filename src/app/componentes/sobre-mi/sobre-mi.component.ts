@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Persona } from 'src/app/model/persona';
 import { DatosService } from 'src/app/servicios/datos.service';
+import { PersonaService } from 'src/app/servicios/persona.service';
 
 @Component({
   selector: 'app-sobre-mi',
@@ -7,17 +9,17 @@ import { DatosService } from 'src/app/servicios/datos.service';
   styleUrls: ['./sobre-mi.component.css']
 })
 export class SobreMiComponent implements OnInit {
-personas:any;
+personas: Persona []=[];
 
 
 
-    constructor(private datos:DatosService) { }
+    constructor(private datos:PersonaService) { }
 
   
 
   ngOnInit(): void {
-    this.datos.getDatos().subscribe(info =>{
-      this.personas = info.personas;
+    this.datos.verPersonas().subscribe(info =>{
+      this.personas = info;
     }
  )
 }
