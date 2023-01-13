@@ -10,7 +10,7 @@ export class ProyectoService {
   editProyecto() {
     throw new Error('Method not implemented.');
   }
-  url = `http://localhost:8080/proyecto/`;
+  url = `https://celinajureportfolio.onrender.com/proyecto/`;
   updateProyecto: any;
 
   constructor(private http:HttpClient) { }

@@ -11,7 +11,7 @@ export class HabilidadService {
   editHabilidad() {
     throw new Error('Method not implemented.');
   }
-  url = `http://localhost:8080/habilidad/`;
+  url = `https://celinajureportfolio.onrender.com/habilidad/`;
   updateHabilidad: any;
   
   constructor(private http:HttpClient) { }

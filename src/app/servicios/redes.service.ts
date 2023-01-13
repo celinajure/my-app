@@ -7,7 +7,7 @@ import { Redes } from '../model/redes';
   providedIn: 'root'
 })
 export class RedesService {
-  url = `http://localhost:8080/red/`;
+  url = `https://celinajureportfolio.onrender.com/red/`;
   updateRed: any;
   
   constructor(private http:HttpClient) { }

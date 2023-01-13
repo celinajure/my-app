@@ -10,7 +10,7 @@ export class ExperienciaService {
   editExperiencia() {
     throw new Error('Method not implemented.');
   }
-  url = 'http://localhost:8080/experiencia/';
+  url = 'https://celinajureportfolio.onrender.com/experiencia/';
   updateExperiencia: any;
 
   constructor(private http:HttpClient) { }

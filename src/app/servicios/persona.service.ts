@@ -11,7 +11,7 @@ export class PersonaService {
     throw new Error('Method not implemented.');
   }
   
-  url = `http://localhost:8080/persona/`;
+  url = `https://celinajureportfolio.onrender.com/persona/`;
 updatePersona:any;
 
   constructor(private http: HttpClient) { }
