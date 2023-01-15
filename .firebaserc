@@ -1,4 +1,13 @@
 {
+  "targets": {
+    "portfoliocelinajure": {
+      "hosting": {
+        "my-app": [
+          "portfoliocelinajure"
+        ]
+      }
+    }
+  },
   "projects": {
     "default": "portfoliocelinajure"
   }

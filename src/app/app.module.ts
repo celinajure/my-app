@@ -30,6 +30,10 @@ import { ModalPanelComponent } from './modal/panel--modal/modal-panel.component'
 import { ModalHardSkillsComponent } from './modal/hard-skills-modal/modal-hard-skills.component';
 import { InterceptorService } from './servicios/interceptor.service';
 import { PersonaService } from './servicios/persona.service';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 
 
@@ -68,7 +72,10 @@ import { PersonaService } from './servicios/persona.service';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideStorage(() => getStorage())
   ],
 
   providers: [PersonaService, { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }],
