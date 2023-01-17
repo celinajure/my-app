@@ -1,8 +1,9 @@
-.container-fluid .container-fluid-content{
+.container-fluid-content{
     padding: 0px;
 }
-.container, .container-sm{
-    max-width: 100%;
+.img-fluid{
+    max-width: 350%;
+    min-width: 150%;
 }
 li.list-group-item{  
     background-color: transparent;
