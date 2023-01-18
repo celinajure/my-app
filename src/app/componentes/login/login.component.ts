@@ -69,13 +69,13 @@ export class LoginComponent implements OnInit {
     if (this.form.valid) {
       console.log(JSON.stringify(this.form.value));
       this.autService.loginPersona(this.form.value).subscribe(data => {
-        console.log("DATA: " + JSON.stringify(data.id));
+        console.log("DATA:" + JSON.stringify(data.id));
         // alert("hola" + data.id);
         if (data.id) {
-          //alert("ACCESO CORRECTO");
+          alert("ACCESO CORRECTO");
           this.ruta.navigate(['/panel']);
         } else {
-          alert(" ACCESO INCORRECTO");
+          alert("ACCESO INCORRECTO");
           alert("error al iniciar sesion");
         }
 
@@ -86,6 +86,7 @@ export class LoginComponent implements OnInit {
     } else {
       sessionStorage.setItem('currentUser', null);
       alert("ESTAS ERRANDO!!!");
+      this.ruta.navigate(['/']);
     }
   }
 }

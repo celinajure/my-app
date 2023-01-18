@@ -27,7 +27,7 @@ export class LogoutComponent implements OnInit {
   }
 
 cerrarSesion(){
-  sessionStorage.setItem('currentUser',null);
+  sessionStorage.setItem('currentUser', null);
   this.modoEdit = false;
   alert("SESIÓN CERRADA");
 
@@ -35,6 +35,7 @@ cerrarSesion(){
   this.ruta.navigate(['/']);
 }
 }
+
 /*cerrarSesion(){
   sessionStorage.setItem('currentUser', "null");
   this.modoEdit = false;
