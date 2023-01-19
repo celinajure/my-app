@@ -12,7 +12,8 @@ import { PersonaService } from 'src/app/servicios/persona.service';
 export class LogoutComponent implements OnInit {
   modoEdit:any;
   persona: any;
-  constructor(private datos: DatosService, private ruta: Router ,private personaService: PersonaService) { }
+
+  constructor(private datos: DatosService, private ruta: Router, private personaService: PersonaService) { }
 
   ngOnInit(): void {
  
@@ -27,7 +28,7 @@ export class LogoutComponent implements OnInit {
   }
 
 cerrarSesion(){
-  sessionStorage.setItem('currentUser', null);
+  sessionStorage.setItem('currentUser', "null");
   this.modoEdit = false;
   alert("SESIÓN CERRADA");
 
