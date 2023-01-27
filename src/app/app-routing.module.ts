@@ -10,7 +10,7 @@ import { GuardGuard } from './servicios/guard.guard';
 const routes: Routes = [
   {path: '', component: IndexComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'panel', component: PanelComponent },
+  {path: 'panel', component: PanelComponent, ...GuardGuard },
   {path: 'registrate', component: RegistrateComponent},
   {path: '**', component: Error404Component}
 ];
