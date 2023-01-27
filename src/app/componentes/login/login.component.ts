@@ -65,6 +65,7 @@ export class LoginComponent implements OnInit {
       }*/
   onEnviar(event: Event) {
     //console.log("QUIZA ME ALEGRO!!!");
+    
     event.preventDefault;
     if (this.form.valid) {
       console.log(JSON.stringify(this.form.value));
@@ -72,7 +73,7 @@ export class LoginComponent implements OnInit {
         console.log("DATA:" + JSON.stringify(data.id));
         // alert("hola" + data.id);
         if (data.id) {
-          alert("ACCESO CORRECTO");
+          alert("O J O , O J O !!!        ...  ahora vas a poder EDITAR TU PORTFOLIO");
           this.ruta.navigate(['/panel']);
         } else {
           alert("ACCESO INCORRECTO");
@@ -86,6 +87,7 @@ export class LoginComponent implements OnInit {
     } else {
       sessionStorage.setItem('currentUser', null);
       alert("ESTAS ERRANDO!!!");
+      alert( "mejor seguí visitando la página!")
       this.ruta.navigate(['/']);
     }
   }

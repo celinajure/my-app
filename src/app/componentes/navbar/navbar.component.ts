@@ -12,10 +12,11 @@ import { DatosService } from 'src/app/servicios/datos.service';
 export class NavbarComponent implements OnInit {
 redes: any;
 miPortfolio:any;
-usuarioAuth: boolean= false;
+usuarioAuth: any;
   constructor(private datos: DatosService, private auth: AutenticacionService, private route: ActivatedRoute ) { }
 
   ngOnInit(): void {
+    this.ngOnInit();
    
     this.datos.getDatos().subscribe(info =>{
 
