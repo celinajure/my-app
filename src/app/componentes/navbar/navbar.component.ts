@@ -16,7 +16,7 @@ usuarioAuth: any;
   constructor(private datos: DatosService, private auth: AutenticacionService, private route: ActivatedRoute ) { }
 
   ngOnInit(): void {
-    this.ngOnInit();
+   
    
     this.datos.getDatos().subscribe(info =>{
 
